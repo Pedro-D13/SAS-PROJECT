@@ -22,7 +22,7 @@
         <div class="container text-center">
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <a class="nav-link text-darken-2" href="{% url 'blog:post_home' %}"> Home </a>
-                <a class="nav-link text-darken-2" href="#">Blog</a>
+                <a class="nav-link text-darken-2" href="{% url 'blog:post_all'%}">Blog</a>
                 <a class="nav-link text-darken-2" href="{% url 'blog:blog_about' %}">Mission</a>
                 <a class="nav-link text-darken-2" href="{% url 'blog:blog_gallery' %}">Gallery</a>
                 <a class="nav-link text-darken-2" href="#">Events</a>
@@ -33,7 +33,6 @@
     <!-- /. NavBar -->
 
 </head>
-
 <!-- Sub & Sign up  -->
 <div class="container-fluid px-4">
     <div class="row text-center">
@@ -65,9 +64,7 @@
 <!-- /. Sub & Sign up -->
 
 <!-- Main Body start -->
-{% block jumbo %}
 
-{% endblock %}
 <body>
     <div class="container-fluid">
         <!-- Header Div -->
