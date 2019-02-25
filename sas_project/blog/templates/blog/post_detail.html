@@ -9,6 +9,12 @@
             <p> {{ post.content | truncatewords:12 }} </p>
             <footer class="blockquote-footer">
                 {{ post.date_posted |date:"d/M/y, H:i" }}
+                <div>
+                    {% if object.author == user %}
+                    <a href="{% url 'blog:post_update' object.id %}" class="btn btn-secondary btn-sm my-1">Update</a>
+                    <a href="{% url 'blog:post_delete' object.id %}" class="btn btn-danger btn-sm my-1"> Delete </a>
+                    {% endif%}
+                </div>
             </footer>
         </div>
     </div>

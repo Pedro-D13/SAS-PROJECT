@@ -53,6 +53,9 @@
             <span class="border py-2 rounded-pill">
                 <a href="{% url 'profile' %}" class="btn btn-flat btn-lg"> Profile </a>
             </span>
+            <div>
+                <a href="{% url 'blog:post_new' %}"> create a post </a>
+            </div>
             {% else %}
             <span class="border py-2 rounded-pill">
                 <a href="{% url 'register' %}" class="btn btn-flat btn-lg">Register</a>
