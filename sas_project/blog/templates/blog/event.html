@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% for event in events %}
+        <div class="col-3">
+            <small class="bg-secondary"> {{ event.event_date }} </small>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

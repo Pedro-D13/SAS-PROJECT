@@ -5,8 +5,12 @@ from .views import (PostListView,
                     PostAllView,
                     PostUpdateView,
                     PostDeleteView,
-                    UserPostListView)
+                    UserPostListView,
+                    EventListView,
+                    EventDetailView) 
+                    # EventCreateView)
 from . import views
+
 
 app_name = "blog"
 urlpatterns = [
@@ -17,6 +21,8 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name="post_update"),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name="post_delete"),
     path('post/blog/', PostAllView.as_view(), name="post_all"),
+    path('events/', EventListView.as_view(), name= "event_list"),
+    path('events/<int:pk>/', EventDetailView.as_view(), name="event_list"),
     path('about/', views.about, name='blog_about'),
     path('gallery/', views.gallery, name='blog_gallery'),
 ]
