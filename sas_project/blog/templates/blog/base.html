@@ -34,7 +34,7 @@
 
 </head>
 <!-- Sub & Sign up  -->
-<div class="container-fluid px-4">
+<div class="container-fluid">
     <div class="row text-center">
         <div class="col mx-auto py-2 order-3">
             {% if user.is_authenticated %}
@@ -69,11 +69,25 @@
 <!-- Main Body start -->
 
 <body>
-    <div class="container-fluid">
+    <!-- Jumbotron -->
+    <div class="jumbotron p-0 m-0">
+        <div class="row justify-content-center">
+            <h1 class="display-4"> The SAS Project </h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <p class="lead"> <strong> A little intro, talking about what the SAS represents and the things
+                        they represent and care about </strong> </p>
+            </div>
+        </div>
+    </div>
+    <!-- /. Jumbotron -->
+    <div class="container-fluid px-0">
         <!-- Header Div -->
         <header class="blog-header text-muted">
-            <!-- Add a foot to the page -->
-            <!-- collapsable blog posts -->
+
+            {% block content %} {% endblock content %}
+
         </header>
         <!-- /.Header Div -->
 
@@ -84,8 +98,9 @@
         </div>
         {% endfor %}
         {% endif %}
-        {% block content %} {% endblock content %}
 
+        <!-- Add a footer to the page -->
+        <!-- collapsable blog posts -->
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
