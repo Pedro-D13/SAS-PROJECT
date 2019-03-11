@@ -14,10 +14,12 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-light ">
-        <a class="navbar-brand justify-content-start" href="{% url 'blog:post_home' %}"> The SAS Project </a>
-        <button class="navbar-toggler mb-y" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        <a class="navbar-brand justify-content-start" href="{% url 'blog:post_home' %}">
+            <img src="{% static 'blog/img/sas.jpg' %}" alt="sas logo" class="rounded-circle" width="40" height="40">
+            The SAS Project </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon justify-content-end"></span>
+            <span class="navbar-toggler-icon"> </span>
         </button>
         <div class="container text-center">
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -70,7 +72,7 @@
 
 <body>
     <!-- Jumbotron -->
-    <div class="jumbotron p-0 m-0">
+    <!-- <div class="jumbotron p-0 m-0">
         <div class="row justify-content-center">
             <h1 class="display-4"> The SAS Project </h1>
         </div>
@@ -80,9 +82,9 @@
                         they represent and care about </strong> </p>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- /. Jumbotron -->
-    <div class="container-fluid px-0">
+    <!-- <div class="container-fluid px-0"> -->
         <!-- Header Div -->
         <header class="blog-header text-muted">
 

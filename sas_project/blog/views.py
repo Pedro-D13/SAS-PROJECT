@@ -11,11 +11,10 @@ from .models import Post, Event
 
 class PostListView(ListView):
     model = Post
-    template_name = "blog/home.html"
+    template_name = "blog/base2.html"
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 5
-
 
 class UserPostListView(ListView):
     model = Post
@@ -40,10 +39,9 @@ class PostDetailView(DetailView):
     model = Post
     context_object_name = 'post'
 
-
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'content','image']
     template_name = "blog/post_form.html"
 
     def form_valid(self, form):
@@ -53,7 +51,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'content','image']
     template_name = "blog/post_form.html"
 
     def form_valid(self, form):

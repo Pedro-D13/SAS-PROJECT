@@ -5,7 +5,6 @@
 
 {% block content %}
 
-
 <!-- Carousel Blog Post -->
 
 <div class="row center-align py-2">
@@ -20,7 +19,7 @@
                         {% for post in posts %}
                         {% if forloop.first %}
                         <div class="carousel-item active">
-                            <img class="img-rounded" src=" {{ post.author.profile.image.url }}">
+
                             <h2> <a href="{% url 'blog:post_detail' post.id %}">{{ post.title |title }} </a> by
                                 {{post.author}}
                             </h2>

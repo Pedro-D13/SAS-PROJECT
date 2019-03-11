@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "sas_project"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "sas_project"
+	}
+}
