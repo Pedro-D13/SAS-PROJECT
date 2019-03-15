@@ -2,8 +2,10 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<title>W3.CSS Template</title>
+<title> SoSA | Welcome Page </title>
 <meta charset="UTF-8" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+  integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
@@ -38,10 +40,10 @@
 
   .parallax {
     /* The image used */
-    background-image: url("{% static 'blog/img/SAS.png' %}");
+    background-image: url("{% static 'blog/img/sosa_logo.jpeg' %}");
 
     /* Set a specific height */
-    height: 150px;
+    height: 400px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -80,7 +82,9 @@
   <div class="w3-container">
     <header class="w3-container w3-orange w3-center" style="padding:128px 16px">
       <h1 class=" w3-jumbo">Our Mission</h1>
-      <p class="w3-xlarge">Inspiration message to get people to Join</p>
+      <p class="w3-xlarge">To Celebrating South Asian <br> Foods, Culture, Film and much more. We are Open to all
+        🏳️‍🌈🧡
+      </p>
       <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">
         Sign Up & Become an Active User
       </button>
@@ -90,11 +94,10 @@
   <!-- <img class="w3-round-medium " src="{% static 'blog/img/SAS.jpg' %}" style="float:right;width:20%;"> -->
 
   <!-- First Grid -->
+  <div class="parallax"></div>
   <div class="w3-container w3-center">
     <h1 class=""> We love Sosa</h1>
   </div>
-  <div class="parallax"></div>
-
   <div class="w3-row-padding w3-padding-16 w3-container">
     <div class="w3-content">
       <div class="w3-row">
@@ -126,7 +129,7 @@
           </p>
         </div>
         <div class="w3-third">
-          <img class="w3-margin-left w3-margin-bottom" src="{% static 'blog/img/SAS.jpg' %}" alt="sosa logo"
+          <img class="w3-margin-left w3-margin-bottom" src="{% static 'blog/img/sosa_logo.jpeg' %}" alt="sosa logo"
             style="width:100%">
         </div>
       </div>
@@ -136,16 +139,15 @@
     <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
       <div class="w3-content">
         <div class="w3-third w3-center">
-          <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+          <i class='fas fa-images' style='font-size:96px;color:red'></i>
+          <i class=" w3-padding-64 w3-text-red w3-margin-right"></i>
         </div>
 
         <div class="w3-twothird">
-          <h1>Lorem Ipsum</h1>
+          <h1>Upcoming Events</h1>
           <h5 class="w3-padding-32">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Short Description of the events that are coming up in the future
+            {{ Lorem }}
           </h5>
 
           <p class="w3-text-grey">
@@ -163,59 +165,105 @@
       </div>
     </div>
 
-    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-      <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
-    </div>
+    <!-- Third Grid -->
+    <div class="w3-container w3-center">
+      <div class="w3-row-padding w3-padding-16 w3-container">
+        <div class="w3-content">
+          <div class="w3-row">
+            <div class="w3-container w3-cell">
+              <h3>
+                Gallery
+              </h3>
+              <h4>Showcasing our past events</h4>
+              <div class="w3-third w3-center">
+              </div>
+            </div>
+            <div class=" w3-padding-16 w3-center w3-hide-small">
+            </div>
+            <div class="w3-twothird">
+              </h1>
+              <h5 class="w3-padding-32">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat.
+              </h5>
 
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-      <div class="w3-xlarge w3-padding-32">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-      </div>
-      <p>
-        Powered by
-        <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-      </p>
-    </footer>
+              <p class="w3-text-grey">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat
+                non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                ea commodo consequat.
+              </p>
+            </div>
+            <div class="w3-third">
 
-    <script>
-      // Used to toggle the menu on small screens when clicking on the menu button
-      function myFunction() {
-        var x = document.getElementById('navDemo')
-        if (x.className.indexOf('w3-show') == -1) {
-          x.className += ' w3-show'
-        } else {
-          x.className = x.className.replace(' w3-show', '')
-        }
-      }
+              <img class="w3-margin-left w3-margin-bottom" src="{% static 'blog/img/sosa_logo.jpeg' %}" alt="sosa logo"
+                style="width:100%">
+            </div>
+          </div>
+        </div>
 
-      var slideIndex = 1
-      showDivs(slideIndex)
 
-      function plusDivs(n) {
-        showDivs((slideIndex += n))
-      }
+        <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+          <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+        </div>
 
-      function showDivs(n) {
-        var i
-        var x = document.getElementsByClassName('mySlides')
-        if (n > x.length) {
-          slideIndex = 1
-        }
-        if (n < 1) {
-          slideIndex = x.length
-        }
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = 'none'
-        }
-        x[slideIndex - 1].style.display = 'block'
-      }
-    </script>
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-center w3-opacity">
+          <div class="w3-xlarge w3-padding-32">
+            <a href="#https://www.facebook.com/bu.sosa.7355"><i
+                class="fa fa-facebook-official w3-hover-opacity"></i></a>
+            <a href="#https://www.instagram.com/societyofsouthasia/"> <i class="fa fa-instagram w3-hover-opacity">
+              </i></a>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="far fa-envelope w3-hover-opacity"></i>
+          </div>
+          <p>
+            Powered by
+            <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+          </p>
+        </footer>
+
+        <script>
+          // Used to toggle the menu on small screens when clicking on the menu button
+          function myFunction() {
+            var x = document.getElementById('navDemo')
+            if (x.className.indexOf('w3-show') == -1) {
+              x.className += ' w3-show'
+            } else {
+              x.className = x.className.replace(' w3-show', '')
+            }
+          }
+
+          var slideIndex = 1
+          showDivs(slideIndex)
+
+          function plusDivs(n) {
+            showDivs((slideIndex += n))
+          }
+
+          function showDivs(n) {
+            var i
+            var x = document.getElementsByClassName('mySlides')
+            if (n > x.length) {
+              slideIndex = 1
+            }
+            if (n < 1) {
+              slideIndex = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = 'none'
+            }
+            x[slideIndex - 1].style.display = 'block'
+          }
+        </script>
 </body>
 
 </html>
