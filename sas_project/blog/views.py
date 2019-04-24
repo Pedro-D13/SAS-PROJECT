@@ -11,7 +11,7 @@ from .models import Post, Event
 
 class PostListView(ListView):
     model = Post
-    template_name = "blog/base2.html"
+    template_name = "blog2/index.html"
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 5
@@ -26,10 +26,9 @@ class UserPostListView(ListView):
         user = get_object_or_404(User, username=self.kwargs.get("username"))
         return Post.objects.filter(author=user).order_by('-date_posted')
 
-
 class PostAllView(ListView):
     model = Post
-    template_name = "blog/blog.html"
+    template_name = "blog2/all_posts_list.html"
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 6

@@ -15,12 +15,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-light ">
         <a class="navbar-brand justify-content-start" href="{% url 'blog:post_home' %}">
-            <img src="{% static 'blog/img/sas.jpg' %}" alt="sas logo" class="rounded-circle" width="40" height="40">
+            <img src="{% static 'blog/img/sas.png' %}" alt="sas logo" class="rounded-circle" width="40" height="40">
             The SAS Project </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"> </span>
         </button>
+
         <div class="container text-center">
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <a class="nav-link text-darken-2" href="{% url 'blog:post_home' %}"> Home </a>
@@ -36,32 +37,27 @@
 
 </head>
 <!-- Sub & Sign up  -->
-<div class="container-fluid">
-    <div class="row text-center">
-        <div class="col mx-auto py-2 order-3">
+<div class="container">
+    <div class="row">
+        <div class="col-4 mx-auto order-2">
             {% if user.is_authenticated %}
-            <span class="border py-2 rounded-pill">
-                <a href="{% url 'logout' %}" class="btn btn-flat btn-lg">Logout</a>
-            </span>
+            <button href="{% url 'logout' %}" type="button" class="btn btn-flat btn-primary">Logout</button>
             {% else %}
-            <span class="border py-2 rounded-pill">
-                <a href="{% url 'login' %}" class="btn btn-flat btn-lg">Login</a>
-            </span>
+            <button href="{% url 'login' %}" type="button" class="btn btn-flat btn-primary">Login</button>
             {% endif %}
         </div>
-        <div class="col mx-auto order-2"></div>
-        <div class="col mx-auto pt-2 order-1">
+
+        <div class="col-4 mx-2 order-1">
             {% if user.is_authenticated %}
-            <span class="border py-2 rounded-pill">
-                <a href="{% url 'profile' %}" class="btn btn-flat btn-lg"> Profile </a>
-            </span>
+            <button href="{% url 'profile' %}" type="button" class="btn btn-flat btn-primary">Profile</button>
             <div>
                 <a href="{% url 'blog:post_new' %}"> create a post </a>
             </div>
             {% else %}
-            <span class="border py-2 rounded-pill">
-                <a href="{% url 'register' %}" class="btn btn-flat btn-lg">Register</a>
-            </span>
+            <a href="{% url 'register' %}">
+            <button type="button" class="btn btn-flat btn-primary">
+                Register</button>
+            </a>
             {% endif %}
         </div>
     </div>
@@ -71,49 +67,36 @@
 <!-- Main Body start -->
 
 <body>
-    <!-- Jumbotron -->
-    <!-- <div class="jumbotron p-0 m-0">
-        <div class="row justify-content-center">
-            <h1 class="display-4"> The SAS Project </h1>
-        </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <p class="lead"> <strong> A little intro, talking about what the SAS represents and the things
-                        they represent and care about </strong> </p>
-            </div>
-        </div>
-    </div> -->
-    <!-- /. Jumbotron -->
-    <!-- <div class="container-fluid px-0"> -->
-        <!-- Header Div -->
-        <header class="blog-header text-muted">
 
-            {% block content %} {% endblock content %}
+    <!-- Header Div -->
+    <header class="blog-header text-muted">
 
-        </header>
-        <!-- /.Header Div -->
+        {% block content %} {% endblock content %}
 
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-            {{ message }}
-        </div>
-        {% endfor %}
-        {% endif %}
+    </header>
+    <!-- /.Header Div -->
 
-        <!-- Add a footer to the page -->
-        <!-- collapsable blog posts -->
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-            crossorigin="anonymous"></script>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- Add a footer to the page -->
+    <!-- collapsable blog posts -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     </div>
 </body>
 <!-- /. body -->
