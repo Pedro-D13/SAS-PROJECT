@@ -1,4 +1,4 @@
-# SAS-PROJECT
+# Sosa-PROJECT
 
 Project currently has a working homepage with relevant links to blog posts.
 
