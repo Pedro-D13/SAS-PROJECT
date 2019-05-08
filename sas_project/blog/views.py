@@ -9,12 +9,14 @@ from django.contrib.auth.models import User
 from .models import Post, Event
 # Create your views here.
 
+
 class PostListView(ListView):
     model = Post
-    template_name = "blog2/index.html"
+    template_name = "blog2/base2.html"
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    paginate_by = 5
+    paginate_by = 3
+
 
 class UserPostListView(ListView):
     model = Post
@@ -25,6 +27,7 @@ class UserPostListView(ListView):
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get("username"))
         return Post.objects.filter(author=user).order_by('-date_posted')
+
 
 class PostAllView(ListView):
     model = Post
@@ -38,9 +41,10 @@ class PostDetailView(DetailView):
     model = Post
     context_object_name = 'post'
 
+
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content','image']
+    fields = ['title', 'content', 'image']
     template_name = "blog/post_form.html"
 
     def form_valid(self, form):
@@ -50,7 +54,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content','image']
+    fields = ['title', 'content', 'image']
     template_name = "blog/post_form.html"
 
     def form_valid(self, form):
@@ -75,10 +79,12 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
+
 class EventListView(ListView):
     model = Event
     template_name = "blog/event.html"
     context_object_name = "events"
+
 
 class EventDetailView(DetailView):
     pass

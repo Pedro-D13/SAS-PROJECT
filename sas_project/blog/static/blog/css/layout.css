@@ -1,0 +1,50 @@
+/* grid  */
+
+.grid {
+  max-width: 1fr;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 1fr;
+  grid-gap: 2em;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "left-col right-col"
+    "left-col right-col"
+    "footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.left-col {
+  grid-area: left-col;
+}
+
+.right-col {
+  grid-area: right-col;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* flex boxes */
+
+.flex {
+  display: flex;
+}
+.col {
+  flex: 2;
+}
+.col-img {
+  flex: 1;
+  max-width: 200px;
+  margin: 5px;
+  border-radius: 50%;
+}

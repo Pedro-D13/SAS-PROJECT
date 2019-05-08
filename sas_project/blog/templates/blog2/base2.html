@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+        integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="{% static 'blog/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/page.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/layout.css' %}">
+    <title>base html file </title>
+</head>
+
+
+
+<body class="grid" style="padding-bottom:1em;">
+    <div class="header">
+        <h2 style="height:250px">Welcome to SOSA</h2>
+        <h5>We are Laughs</h5>
+        <h5>We are Love </h5>
+        <h5>We are Life</h5>
+    </div>
+
+    <div class="nav" id="navbar">
+        <a href=""> Home </a>
+        <a href=""> Gallery </a>
+        <a href=""> Blog Posts</a>
+        <div class="dropdown">
+            <a href=""> Events </a>
+            <button class="dropbtn">
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="past"> past events</a>
+                <a href="future"> future events</a>
+            </div>
+        </div>
+        <a href=""> About</a>
+        <a href=""> Contact </a>
+    </div>
+
+    <div class="left-col">
+        {% for post in posts %}
+        <div class="card-l">
+            <div class="flex">
+                <div class="col-img" style="max-width:100%; max-height:50%; border-radius:50%">
+                    <img class="col-img" src="{% static 'blog/img/sosa_logo.jpeg' %}" alt="profile img">
+                </div>
+                <div class=" col">
+                    <h2>{{ post.title | title }} </h2>
+                    <h5>Post by {{post.author}}, {{post.date_posted | date:"d-m-y" }}</h5>
+                    <!-- display the preview of the post as a para to the left of the div -->
+                </div>
+                <div class="col">
+                    <p> {{ post.content | truncatewords:50 }} </p>
+                    <a href="{% url 'blog:post_detail' post.id %}"> Link to page</a>
+                </div>
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+
+    <div class="right-col">
+        <div class="card-r">
+            <h2>Upcoming events</h2>
+            <div class="fakeimg" style="height:100px;">Image</div>
+            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+        </div>
+        <div class="card-r">
+            <h3> past events </h3>
+            <div class="fakeimg">Image</div>
+            <br>
+            <div class="fakeimg">Image</div>
+            <br>
+            <div class="fakeimg">Image</div>
+        </div>
+    </div>
+    <footer class="footer">
+        <i class="fab fa-instagram" style='font-size:36px;'></i>
+        <i class='fas fa-at' style='font-size:36px'></i>
+        <i class='fab fa-facebook' style='font-size:36px;color:rgb(11, 45, 156);'></i>
+
+    </footer>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
