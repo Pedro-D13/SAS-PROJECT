@@ -24,3 +24,6 @@ class Event(models.Model):
 
     def __str__(self):
         return f"{self.title}--{self.event_date}--{self.event_time}"
+
+class Gallery(models.Model):
+    img = models.ImageField()

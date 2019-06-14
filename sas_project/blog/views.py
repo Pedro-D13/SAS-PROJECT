@@ -1,3 +1,4 @@
+import os
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import (ListView,
                                   DetailView,
@@ -10,9 +11,14 @@ from .models import Post, Event
 # Create your views here.
 
 
+class BaseTemplate(ListView):
+    model = Post
+    template_name = "blog2/main.html"
+
+
 class PostListView(ListView):
     model = Post
-    template_name = "blog2/base2.html"
+    template_name = "blog2/index.html"
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 3
@@ -89,13 +95,14 @@ class EventListView(ListView):
 class EventDetailView(DetailView):
     pass
 
-
 # class EventCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 #     pass
 
 
 def gallery(request):
-    return render(request, 'blog/gallery.html')
+    path = "static/blog/img"
+    img_list = os.listdir(path)
+    return render(request, 'blog2/mat_gallery.html', {'images': img_list})
 
 
 def about(request):

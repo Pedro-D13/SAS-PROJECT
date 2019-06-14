@@ -7,27 +7,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block styles %}
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
         integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     <link rel="stylesheet" href="{% static 'blog/css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/page.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/layout.css' %}">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    {% endblock %}
+    {% block head %}
     <title>base html file </title>
+    {% endblock head %}
 </head>
 
 
-
-<body class="grid" style="padding-bottom:1em;">
-    <div class="header">
+<body class="grid" style="padding-bottom:1em;" id="jumbo">
+    <div class="mdc-cards">
+        {% block jumbo %}
         <h2 style="height:250px">Welcome to SOSA</h2>
-        <h5>We are Laughs</h5>
-        <h5>We are Love </h5>
-        <h5>We are Life</h5>
+        <h5> Home of the Soceity of South Asia </h5>
+        <h5>I surround myself with good people who make me feel great and give me positive energy.
+        </h5>
+        <h5>which is why you should <a style="color:blue;" href=""> Join today </a></h5>
+        {% endblock jumbo %}
     </div>
 
+    {% block navbar %}
     <div class="nav" id="navbar">
-        <a href=""> Home </a>
-        <a href=""> Gallery </a>
+        <a href="{% url 'blog:post_home' %}"> Home </a>
+        <a href="{% url 'blog:blog_gallery' %}"> Gallery </a>
         <a href=""> Blog Posts</a>
         <div class="dropdown">
             <a href=""> Events </a>
@@ -42,7 +52,9 @@
         <a href=""> About</a>
         <a href=""> Contact </a>
     </div>
+    {% endblock navbar %}
 
+    {% block content %}
     <div class="left-col">
         {% for post in posts %}
         <div class="card-l">
@@ -61,9 +73,8 @@
                 </div>
             </div>
         </div>
-        {% endfor%}
+        {% endfor %}
     </div>
-
     <div class="right-col">
         <div class="card-r">
             <h2>Upcoming events</h2>
@@ -79,6 +90,9 @@
             <div class="fakeimg">Image</div>
         </div>
     </div>
+    {% endblock content %}
+
+
     <footer class="footer">
         <i class="fab fa-instagram" style='font-size:36px;'></i>
         <i class='fas fa-at' style='font-size:36px'></i>
@@ -86,6 +100,7 @@
 
     </footer>
     <script>
+        mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
         window.onscroll = function () { myFunction() };
 
         var navbar = document.getElementById("navbar");

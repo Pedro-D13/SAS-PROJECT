@@ -1,0 +1,12 @@
+/* grid for base template */
+
+/* grid for base template */
+
+main.grid-container {
+  display: grid;
+}
+
+.about-us {
+  display: block;
+  border: 2px sold blue;
+}

@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+
+    <title> Landing page </title>
+</head>
+
+<body>
+    <main class="grid-container">
+        <ul class="nav" id="navbar">
+            <li><a href=""> Home </a> </li>
+            <li><a href=""> Blog </a> </li>
+            <li><a href=""> Gallery </a> </li>
+            <li><a href=""> Events </a> </li>
+            <li><a href=""> About </a> </li>
+            <li>
+                <a class="btn" href=""> Login </a>
+            </li>
+        </ul>
+        <div class="hero-image" style="height: 400px">
+            <div class="hero-text">
+                <h1> Welcome to the SOSA </h1>
+                <p> We Live Laugh & Love </p>
+                <button> Join us </button>
+                <button> Learn more </button>
+            </div>
+        </div>
+
+        <section class="sctn1">
+            <div>
+                <h2 class="SectionHeading"> About us </h2>
+                <p> This is some text that should be nice </p>
+            </div>
+            <div class="flex-container">
+                <div class="col">
+                    <h3> this will be in relation to the image icon above</h3>
+                    <p> a little paragraph about this col</p>
+                </div>
+                <div class="col">
+                    <h3> this will be in relation to the image icon above</h3>
+                    <p> a little paragraph about this col</p>
+                </div>
+                <div class="col">
+                    <h3> this will be in relation to the image icon above</h3>
+                    <p> a little paragraph about this col</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sctn2">
+            <div>
+                <h2 class="SectionHeading"> Upcoming Events </h2>
+                <p> Check out exciting upcoming events </p>
+            </div>
+            <div class="flex-container">
+                <div class="col">
+                    <img class="" src="{% static 'blog/img/sosa_image_5.jpg'%}" alt="">
+                    <h3>Event One coming up </h3>
+                    <p> some text about the event that coming up</p>
+                </div>
+                <div class="col">
+                    <img class="" src="{% static 'blog/img/sosa_image_4.jpg'%}" alt="">
+                    <h3> Event TWO coming up </h3>
+                    <p> some text about the event that coming up</p>
+                </div>
+            </div>
+
+        </section>
+        <section class="sctn1">
+            <div class="flex-container">
+                <div class="col">
+                    <h2> Our Gallery </h2>
+                    <p> some text for the Gallery </p>
+                    <div class="tab"> Tap Button </div>
+                    <div class="tab"> Tap Button </div>
+                    <div class="tab"> Tap Button </div>
+                    <img class="gallery_peek" src="{% static 'blog/img/sosa_image_2.jpg' %}" alt="">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <script>
+        window.onscroll = function () { myFunction() };
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+
+</html>
