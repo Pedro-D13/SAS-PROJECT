@@ -1,0 +1,123 @@
+/* Nav bar top, links , logo and spacing */
+.topnav {
+  padding: 0.5em;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: topnav;
+  background-color: dimgray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: 100%;
+  /* Full width */
+  z-index: 1;
+}
+
+.topnav .logo {
+  padding: auto;
+}
+
+.topnav .topnavspace {
+  margin: auto;
+}
+
+.topnav .navlinks a {
+  display: inline;
+  color: blue;
+  text-align: center;
+  text-decoration: none;
+  padding: 1em 2em;
+  font-size: 16px;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.topnav .navlinks a:hover {
+  background-color: lightblue;
+  color: black;
+}
+
+.topnav .navlinks a:after {
+  background-color: #d8dada;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+html,
+body {
+  margin: 0px;
+}
+
+/* Layout for the Page  */
+.container {
+  max-height: 1200px;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  grid-column: auto auto;
+      grid-template-areas: "topnav" "hero" "sctn1" "sctn2" "sctn3" "sctn4" "sctn5";
+}
+
+/* Hero Image */
+.hero-image {
+  height: 600px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: hero;
+}
+
+.sctn1 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: sctn1;
+  background-color: white;
+  height: 100px;
+}
+
+.sctn2 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: sctn2;
+  background-color: red;
+  height: 100px;
+}
+
+.sctn3 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: sctn3;
+  background-color: white;
+  height: 100px;
+}
+
+.sctn4 {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: sctn4;
+  background-color: yellow;
+  height: 100px;
+}
+
+.sctn5 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: sctn5;
+  background-color: orange;
+  height: 100px;
+}
+/*# sourceMappingURL=layout.css.map */

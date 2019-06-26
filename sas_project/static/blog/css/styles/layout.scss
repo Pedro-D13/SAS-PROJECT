@@ -1,0 +1,54 @@
+@import "./sctn1", "./topnav";
+
+html,
+body {
+  margin: 0px;
+}
+
+/* Layout for the Page  */
+.container {
+  max-height: 1200px;
+  margin: 0;
+  display: grid;
+  grid-column: auto auto;
+  grid-template-areas:
+    "topnav"
+    "hero"
+    "sctn1"
+    "sctn2"
+    "sctn3"
+    "sctn4"
+    "sctn5";
+}
+
+/* Hero Image */
+.hero-image {
+  height: 600px;
+  grid-area: hero;
+}
+
+.sctn1 {
+  grid-area: sctn1;
+  background-color: white;
+  height: 100px;
+}
+.sctn2 {
+  grid-area: sctn2;
+  background-color: red;
+  height: 100px;
+}
+.sctn3 {
+  grid-area: sctn3;
+  background-color: white;
+  height: 100px;
+}
+.sctn4 {
+  grid-area: sctn4;
+  background-color: yellow;
+  height: 100px;
+}
+.sctn5 {
+  grid-area: sctn5;
+  background-color: orange;
+  height: 100px;
+}

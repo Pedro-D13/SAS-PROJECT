@@ -1,0 +1,46 @@
+/* Nav bar top, links , logo and spacing */
+.topnav {
+  padding: 0.5em;
+  grid-area: topnav;
+  background-color: dimgray;
+  display: flex;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 1;
+
+  .logo {
+    padding: auto;
+  }
+  .topnavspace {
+    margin: auto;
+  }
+  .navlinks a {
+    display: inline;
+    color: blue;
+    text-align: center;
+    text-decoration: none;
+    padding: 1em 2em;
+    font-size: 16px;
+    transition-delay: 0.5s;
+    &:hover {
+      background-color: lightblue;
+      color: black;
+    }
+    &:after {
+      background-color: rgb(216, 218, 218);
+      transition: 0.5s;
+    }
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}

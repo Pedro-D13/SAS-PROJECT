@@ -1,8 +1,3 @@
-body {
-  margin: 0;
-  background: white;
-}
-
 /* nav bar css start */
 
 .nav {
@@ -78,7 +73,6 @@ html {
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/nightsky.jpg");
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,7 +89,64 @@ html {
 }
 /* jumbo end */
 
-.aboutus {
+section.sctn1 {
   display: block;
-  border: 2px sold blue;
+  padding: 40px 80px;
+  height: auto;
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  border: 2px solid black;
+  height: 60%;
+  padding: 20px 20px 20px;
+  margin: 10px 20px;
+}
+
+.SectionHeading {
+  text-align: center;
+}
+
+section.sctn2 {
+  display: block;
+  padding: 40px 70px;
+  background: rgb(36, 35, 35);
+  height: auto;
+  text-align: center;
+  color: white;
+}
+
+img {
+  padding: 0 6px;
+  display: none;
+  width: 20%;
+}
+
+img.gallery_peek {
+  padding: 0 6px;
+  float: top;
+  width: 20%;
+}
+
+.tab {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.hero-image .hero-text .hero-btn {
+  border: 2px solid blue;
+  padding: 2em;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
