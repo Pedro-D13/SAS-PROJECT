@@ -1,153 +1,184 @@
-{% extends "blog2/base2.html" %}
-
 {% load static %}
-{% block content %}
 
-<!-- Jumbotron Intro  -->
-<div class="jumbotron jumbotron-fluid bg-white">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/styles/layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/styles/styles.css' %}">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Homepage </title>
+
+</head>
+
+<body>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="brand-logo">
-                    <img src="{% static 'blog/img/sosa_logo.jpeg' %}" alt="" width="20%">
-                </h2>
-                <h1 class="display-5" style="text-align:center"> Welcome message </h1>
+        <div class="topnav" id="navbar">
+            <a href="#SOSA" style="text-decoration: none">
+                <div class="logo">
+                    SOSA
+                </div>
+            </a>
+            <div class="topnavspace"> </div>
+            <div class="navlinks">
+                <a href=""> Home </a>
+                <a href=""> Blog </a>
+                <a href=""> Gallery </a>
+                <a href=""> Events </a>
+                <a href=""> About </a>
+                <a href=""> Contact us </a>
             </div>
         </div>
-        <div class="row">
-            <div class="col-7 p-4">
-                <p class="lead">SOSA is the perfect place to learn and participate in appreciating the diversity of
-                    south asia
-                </p>
-                <button class="btn btn-large btn-primary">Join Today </button>
-            </div>
 
-            <div class="col-5" style="text-align: right">
-                <img class="align-self-end responsive-img" src="{% static 'blog/img/sosa_image_21.jpg'%}" alt=""
-                    width="50%">
-            </div>
-        </div>
-    </div>
-    <!-- ../Jumbotron intro -->
-    <!-- blog posts being on a carasol -->
-    <div class="container">
-        <div class="row">
-            <div class="col-auto">
-                <h1 class="card-title text-center my-0 rounded-pill display-4" style="background:orange"> Latest
-                    posts </h1>
-                <div class="carousel-inner align-content-center">
-                    <div class="text-center ">
-                        {% for post in posts %}
-                        {% if forloop.first %}
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-item active">
-                                <div class="card badge-secondary">
-                                    <div class="card-header">
-                                        <!-- title of blog will link to full post -->
-                                        <a href="{% url 'blog:post_detail' post.id %}"> {{ post.title|title }}</a>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-4"></div>
-                                                <div class="col-auto">
-                                                    <h4 class="card-title"><a class="" href="#">
-                                                            {{ post.content| truncatewords:25 }}
-                                                            <br>
-                                                        </a></h4>
-                                                    <p>
-                                                        <a href="{% url 'blog:user_posts' post.author %}">
-                                                            By: {{ post.author }} </a>
-                                                    </p>
-                                                    <a href="{% url 'blog:post_detail' post.id %}"> link to blog
-                                                        detail
-                                                        / read more
-                                                    </a>
-                                                    <br>
-                                                    <a href="{% url 'blog:post_all' %}"> view all posts </a>
-                                                </div>
-                                                <div class="col-4"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% else %}
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-item ">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <!-- title of blog will link to full post -->
-                                        <a href="{% url 'blog:post_detail' post.id %}"> {{ post.title|title }}</a>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-4"></div>
-                                                <div class="col-auto">
-                                                    <h4 class="card-title"><a class="" href="#">
-                                                            {{ post.content| truncatewords:25 }}
-                                                            <br>
-                                                        </a></h4>
-                                                    <p>
-                                                        <a href="{% url 'blog:user_posts' post.author %}">
-                                                            {{ post.author }} </a>
-                                                    </p>
-                                                    <a href="{% url 'blog:post_detail' post.id %}"> link to blog
-                                                        detail
-                                                        / read more
-                                                    </a>
-                                                    <br>
-                                                    <a href="{% url 'blog:post_all' %}"> view all posts </a>
-                                                </div>
-                                                <div class="col-4"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                                data-slide="prev">
-                                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                                data-slide="next">
-                                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
-                                <span class="sr-only">Next</span>
-                            </a>
-
-                        </div>
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1 style="margin-right: 30%;"> Welcome to the SOSA <div class="tooltip">
+                        <span class="tooltiptext">
+                            This is a message about stuff
+                        </span>
                     </div>
+                </h1>
+
+                <h1 style="margin-left: 30%;"> We Live Laugh & Love </h1>
+                <div class="btn-div">
+                    <div class="btn"> Join us </div>
+                    <div class="btn"> Learn more </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--  upcoming events  -->
 
+        <section class="sctn1" id="SOSA">
+            <div class="sctn">
+                <h2 class="SectionHeading"> About us </h2>
+                <p> We are the Bournmouths Universities <br> Society of South Asia </p>
+                <p> Learn About what we are trying to achieve and what we have acheived below </p>
+            </div>
 
-    <!-- carousel of gallery images -->
-    <div class="container">
-        <!-- Welcome to SOSA divs -->
-        <div classs="container-fluid">
-            <div class="row ">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    <h1 class="text-center"> Introduction Paragraph </h1>
+            <div class="flex-container">
+                {% for post in posts  %}
+                <div class="col">
+                    <img src="" alt="">
+                    <h3> {{ post.title }} </h3>
+                    <p> {{ post.content|truncatewords:20 }} </p>
+                    <a href="{% url 'blog:post_detail' post.id %}"> Continue reading</a>
                 </div>
-                <div class="col-sm-2"></div>
+                {% endfor %}
             </div>
-            <div class="row">
-                {% lorem %}
-            </div>
-            <!-- ../Welcome to SOSA -->
 
-        </div>
+            <h2> <a href=""> see more articles and blogs from us </a></h2>
+        </section>
+
+        <section class="sctn2">
+            <div>
+                <h3 class="SectionHeading"> Get involved <br>
+                    <h1> Upcoming Events </h1>
+                </h3>
+            </div>
+
+            <div class="flex-container">
+
+                {% for event in events %}
+                <div class="col">
+                    <h3>{{ event.title }} taking place on the {{ event.event_date}} & @
+                        {{event.event_time}} </h3>
+                    <p> {{ event.desc }} </p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class=" sctn3">
+
+            <div class="slideshow-container">
+
+                <div class="slides fade">
+                    <div class="numbertext"> 1 / 3 </div>
+                    <img src="{% static 'blog/img/sosa_image_4.jpg'%}" style="width:100%" alt="">
+                    <div class="slider-text"> Caption txt for the image above </div>
+                </div>
+
+                <div class="slides fade">
+                    <div class="numbertext"> 2 / 3 </div>
+                    <img src="{% static 'blog/img/sosa_image_3.jpg'%}" style="width:100%" alt="">
+                    <div class="slider-text"> Caption txt for the image above </div>
+                </div>
+
+                <div class="slides fade">
+                    <div class="numbertext"> 3 / 3 </div>
+                    <img src="{% static 'blog/img/sosa_image_5.jpg'%}" style="width:100%" alt="">
+                    <div class="slider-text"> Caption txt for the image above </div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+            <!-- <a class="button" href="#"> tab1</a>
+            <a class="button" href="#"> tab2</a>
+            <a class="button" href="#"> tab3 </a>
+            <div class="flex-container">
+                <img class="gallery_peek" src="{% static 'blog/img/sosa_image_2.jpg' %}" style="width:100%" alt="">
+            </div> -->
+
+        </section>
+
+        <section class="sctn4">
+            <div class="shout_out">
+                <h2> Created by Pedro Dias </h2>
+            </div>
+        </section>
+        <section class="sctn5">
+            <h2>Style Social Media Buttons</h2>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-snapchat-ghost"></a>
+        </section>
     </div>
-</div>
 
-{% endblock %}
+
+</body>
+<script>
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    } 
+</script>
+
+</html>

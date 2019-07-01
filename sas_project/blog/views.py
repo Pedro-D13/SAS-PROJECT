@@ -4,7 +4,8 @@ from django.views.generic import (ListView,
                                   DetailView,
                                   CreateView,
                                   UpdateView,
-                                  DeleteView)
+                                  DeleteView,
+                                  TemplateView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from .models import Post, Event
@@ -13,12 +14,22 @@ from .models import Post, Event
 
 class BaseTemplate(ListView):
     model = Post
-    template_name = "blog2/main.html"
+    template_name = "blog2/index.html"
+    context_object_name = "posts"
+    ordering = ['-date_posted']
+    paginate_by = 3
+
+
+def index(request):
+    posts = Post.objects.all()[:3]
+    events = Event.objects.all()
+    context = {"posts": posts, "events": events}
+    return render(request, 'blog2/index.html', context)
 
 
 class PostListView(ListView):
     model = Post
-    template_name = "blog2/index.html"
+    # template_name = "blog/index.html"
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 3

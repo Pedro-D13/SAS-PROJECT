@@ -1,0 +1,15 @@
+@mixin tooltip {
+  visibility: hidden;
+  width: auto;
+  background-color: rgb(80, 77, 77);
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+
+  &:hover .tooltiptext {
+    visibility: visible;
+  }
+}

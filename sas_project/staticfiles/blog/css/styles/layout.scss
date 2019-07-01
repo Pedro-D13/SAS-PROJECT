@@ -1,3 +1,5 @@
+@import "./sctn1", "./topnav";
+
 html,
 body {
   margin: 0px;
@@ -17,51 +19,6 @@ body {
     "sctn3"
     "sctn4"
     "sctn5";
-}
-
-/* Nav bar top, links , logo and spacing */
-.topnav {
-  padding: 0.5em;
-  grid-area: topnav;
-  background-color: dimgray;
-  display: flex;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-  z-index: 1;
-}
-
-.topnav .logo {
-  padding: auto;
-}
-
-.topnavspace {
-  margin: auto;
-}
-
-.topnav .navlinks a {
-  display: inline;
-  color: blue;
-  text-align: center;
-  text-decoration: none;
-  padding: 1em 2em;
-  font-size: 16px;
-}
-
-.topnav a:hover {
-  background-color: lightgrey;
-  color: black;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
 }
 
 /* Hero Image */
@@ -93,5 +50,6 @@ body {
 .sctn5 {
   grid-area: sctn5;
   background-color: orange;
-  height: 100px;
+  height: auto;
+  text-align: center;
 }

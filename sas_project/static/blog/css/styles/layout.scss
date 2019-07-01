@@ -1,4 +1,4 @@
-@import "./sctn1", "./topnav";
+@import "./sctn1", "./sctn3", "./topnav", "./mixins";
 
 html,
 body {
@@ -7,7 +7,7 @@ body {
 
 /* Layout for the Page  */
 .container {
-  max-height: 1200px;
+  max-height: 100vh;
   margin: 0;
   display: grid;
   grid-column: auto auto;
@@ -23,32 +23,39 @@ body {
 
 /* Hero Image */
 .hero-image {
-  height: 600px;
+  height: 60vh;
   grid-area: hero;
 }
 
 .sctn1 {
   grid-area: sctn1;
   background-color: white;
-  height: 100px;
+  height: 10vh;
 }
+
 .sctn2 {
   grid-area: sctn2;
+
   background-color: red;
-  height: 100px;
+  height: 10vh;
 }
+
 .sctn3 {
   grid-area: sctn3;
   background-color: white;
-  height: 100px;
+  height: 300px;
 }
+
 .sctn4 {
   grid-area: sctn4;
   background-color: yellow;
-  height: 100px;
+  height: 10vh;
 }
+
 .sctn5 {
   grid-area: sctn5;
   background-color: orange;
-  height: 100px;
+  height: auto;
+  height: 10vh;
+  text-align: center;
 }

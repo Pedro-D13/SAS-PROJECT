@@ -4,7 +4,7 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: topnav;
-  background-color: white;
+  background-color: dimgray;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,18 +27,24 @@
 
 .topnav .navlinks a {
   display: inline;
-  color: #913c3c;
+  color: blue;
   text-align: center;
   text-decoration: none;
   padding: 1em 2em;
   font-size: 16px;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
-.topnav:hover {
-  background-color: blue;
-  color: #947070;
+.topnav .navlinks a:hover {
+  background-color: lightblue;
+  color: black;
+}
+
+.topnav .navlinks a:after {
+  background-color: #d8dada;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .sticky {
@@ -112,7 +118,6 @@ body {
   -ms-grid-column: 1;
   grid-area: sctn5;
   background-color: orange;
-  height: auto;
-  text-align: center;
+  height: 100px;
 }
 /*# sourceMappingURL=layout.css.map */
