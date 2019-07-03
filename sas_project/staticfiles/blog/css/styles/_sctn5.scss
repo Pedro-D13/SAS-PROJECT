@@ -1,0 +1,44 @@
+@mixin icons($color) {
+    text-decoration: none;
+    font-size: 4rem;
+    padding: 4px;
+    color: $color;
+    background: none;
+
+    &:link {
+        color: $color;
+    }
+
+    &:visited {
+        color: $color;
+    }
+
+}
+
+
+.sctn5 {
+    text-align: center;
+
+    #insta {
+        @include icons(#ffffff);
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        display: none;
+    }
+
+    #snapchat {
+        @include icons(#FFFC00)
+    }
+
+    #twitter {
+        @include icons(#00acee)
+    }
+
+    #youtube {
+        @include icons(red)
+    }
+
+    #facebook {
+        @include icons(#3b5998)
+    }
+}
