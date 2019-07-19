@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import (BaseTemplate,
+from .views import (homepageview,
                     PostListView,
                     PostDetailView,
                     PostCreateView,
@@ -14,7 +14,7 @@ from . import views
 
 app_name = "blog"
 urlpatterns = [
-    path('', views.index, name='post_home'),
+    path('', views.homepageview, name='post_home'),
     path('user/<str:username>/', UserPostListView.as_view(), name='user_posts'),
     path('post/<int:pk>/', PostDetailView.as_view(), name="post_detail"),
     path('post/new/', PostCreateView.as_view(), name="post_new"),

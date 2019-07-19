@@ -25,7 +25,7 @@ $btn1color: rgba(95, 94, 104, 0.16);
     .btn {
         margin: 2px 2em;
         border: 2px solid $btn1color;
-        background-color: rgba(166, 166, 188, 0);
+        background-color: rgba(255, 226, 226, 0.53);
         color: white;
         padding: 14px 22px;
         display: inline;
@@ -66,16 +66,6 @@ section.sctn1 {
     display: flex;
     justify-content: center;
     padding: 2em;
-
-}
-
-.col {
-    border: 2px solid black;
-    justify-content: center;
-    margin: 2%;
-    padding: 20px 40px;
-    ;
-
 }
 
 .SectionHeading {
@@ -131,10 +121,6 @@ img.gallery_peek {
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
-
-        .tooltip {
-            @include tooltip;
-        }
     }
 }
 

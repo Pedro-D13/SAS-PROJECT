@@ -1,4 +1,6 @@
 import os
+import json
+from django.views import View
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import (ListView,
                                   DetailView,
@@ -9,6 +11,7 @@ from django.views.generic import (ListView,
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from .models import Post, Event
+
 # Create your views here.
 
 
@@ -20,16 +23,16 @@ class BaseTemplate(ListView):
     paginate_by = 3
 
 
-def index(request):
-    posts = Post.objects.all()[:3]
-    events = Event.objects.all()
-    context = {"posts": posts, "events": events}
+def homepageview(request, *args, **kwargs):
+    posts = Post.objects.all().order_by('-date_posted')[:3]
+    events = Event.objects.all().order_by('-event_date')[:3]
+    context = {'posts': posts, 'events': events}
     return render(request, 'blog2/index.html', context)
 
 
 class PostListView(ListView):
     model = Post
-    # template_name = "blog/index.html"
+    template_name = "blog/index.html"
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 3

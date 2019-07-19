@@ -1,69 +1,63 @@
 @import "./sctn1", "./sctn3", "./sctn5", "./topnav", "./mixins";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
-
 
 /* Layout for the Page  */
 .container {
-    max-height: auto;
-    margin: 0;
-    display: grid;
-    grid-column: auto;
-    grid-template-areas:
-        "topnav"
-        "hero"
-        "sctn1"
-        "sctn2"
-        "sctn3"
-        "sctn4"
-        "sctn5";
+  max-height: auto;
+  margin: 0;
+  display: grid;
+  grid-column: auto;
+  grid-template-areas:
+    "topnav"
+    "hero"
+    "sctn1"
+    "sctn2"
+    "sctn3"
+    "sctn4"
+    "sctn5";
 }
 
 /* Hero Image */
 .hero-image {
-    height: 60vh;
-    grid-area: hero;
+  height: 60vh;
+  grid-area: hero;
 }
 
 .sctn1 {
-    grid-area: sctn1;
-    background-color: white;
-    height: 10vh;
-    margin: 20px;
+  grid-area: sctn1;
+  background-color: white;
+  height: 10vh;
+  margin: 20px;
 }
 
 .sctn2 {
-    grid-area: sctn2;
-    background-color: red;
-    height: 10vh;
-
+  grid-area: sctn2;
+  height: 10vh;
 }
 
 .sctn3 {
-    grid-area: sctn3;
-    display: block;
-    z-index: 1;
-    padding: 20px;
-
+  grid-area: sctn3;
+  display: block;
+  z-index: -1;
+  padding: 20px;
 }
 
 .sctn4 {
-    grid-area: sctn4;
-    background-color: yellow;
-    height: auto;
-    display: none;
-
+  grid-area: sctn4;
+  background-color: yellow;
+  height: auto;
+  display: none;
 }
 
 .sctn5 {
-    grid-area: sctn5;
-    background-color: #ffffff;
-    height: auto;
-    display: block;
-
+  grid-area: sctn5;
+  background-color: #ffffff;
+  height: auto;
+  display: block;
 }

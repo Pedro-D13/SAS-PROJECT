@@ -1,37 +1,5 @@
 /* nav bar css start */
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-}
-
-/* Nav bar css end  */
-.btn {
-  border: 2px solid #5f5e68;
-  background-color: #5656a5;
-  color: white;
-  padding: 14px 22px;
-  font-size: 16px;
-  display: inline;
-  cursor: pointer;
-  border-radius: 3px;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-}
-
-.btn:hover {
-  border: 2px solid #28284b;
-  background-color: #161629;
-  color: #5656a5;
-}
-
-/* Jumbo start */
+/* Jumbo }start */
 body,
 html {
   height: 100%;
@@ -54,13 +22,16 @@ section.sctn1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 2em;
 }
 
 .col {
-  border: 2px solid black;
-  height: 60%;
-  padding: 20px 20px 20px;
-  margin: 10px 20px;
+  border: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem;
+  padding: 20px 40px;
 }
 
 .SectionHeading {
@@ -123,18 +94,8 @@ img.gallery_peek {
   color: white;
 }
 
-.hero-image .hero-text .hero-btn {
-  margin: 1rem;
-  width: 50%;
-  border: 2px solid #5f5e68;
-  border-radius: 5px;
-  padding: 2em;
-  opacity: 0.5;
-  font-size: 0.7em;
-  filter: alpha(opacity=50);
-}
-
-.hero-image .hero-text .hero-btn:hover {
-  background-color: #939393;
+.imgg {
+  scale: 20%;
+  height: auto;
 }
 /*# sourceMappingURL=styles.css.map */

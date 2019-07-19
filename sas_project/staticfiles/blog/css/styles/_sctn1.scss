@@ -1,0 +1,22 @@
+@mixin border-shadow() {
+  padding: 2rem;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.sctn1 {
+  .SectionHeading {
+    @include border-shadow;
+  }
+
+  .flex-container {
+    border: none;
+  }
+
+  .col {
+    @include border-shadow() {
+    }
+  }
+}
