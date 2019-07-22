@@ -9,6 +9,7 @@
 
 .sctn1 .flex-container {
   border: none;
+  padding: 44px 0px;
 }
 
 .sctn1 .col {
@@ -31,6 +32,7 @@
 
 .sctn1 .flex-container {
   border: none;
+  padding: 44px 0px;
 }
 
 .sctn1 .col {
@@ -53,6 +55,7 @@
 
 .sctn2 .flex-container {
   border: none;
+  padding: 44px 0px;
 }
 
 .sctn2 .col {
@@ -73,13 +76,14 @@
 }
 
 .sctn3 h1 {
-  padding: 20px;
+  padding: 0px 10px;
+  margin-top: 3rem;
 }
 
 .sctn3 .imgs-1 {
   width: 20rem;
   height: 20rem;
-  background-image: url("/static/blog/img/sosa_image_5.jpg");
+  background-image: url("/static/blog/img/sosa_image_12.jpg");
   background-position: center center;
   background-size: cover;
   padding: auto;
@@ -115,10 +119,57 @@
   border: 6px solid black;
 }
 
+.sctn3 #past-events {
+  color: grey;
+}
+
+.sctn3 .imgs-4 {
+  width: 20rem;
+  height: 20rem;
+  background-image: url("/static/blog/img/sosa_image_11.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding: auto;
+  margin: auto;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid grey;
+}
+
+.sctn3 .imgs-5 {
+  width: 20rem;
+  height: 20rem;
+  background-image: url("/static/blog/img/sosa_image_9.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding: auto;
+  margin: auto;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid grey;
+}
+
+.sctn3 .imgs-6 {
+  width: 20rem;
+  height: 20rem;
+  background-image: url("/static/blog/img/sosa_image_2.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding: auto;
+  margin: auto;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid grey;
+}
+
 .sctn5 {
   background-color: #242323;
   text-align: center;
   padding: 2rem;
+}
+
+.sctn5 p {
+  margin: 1rem;
 }
 
 .sctn5 #insta {
@@ -278,6 +329,12 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin: 1rem;
 }
 
 /* Layout for the Page  */
