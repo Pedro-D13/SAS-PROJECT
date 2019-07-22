@@ -69,6 +69,11 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: auto;
+  text-decoration: none;
+}
+
+.sctn3 h1 {
+  padding: 20px;
 }
 
 .sctn3 .imgs-1 {
@@ -79,9 +84,9 @@
   background-size: cover;
   padding: auto;
   margin: auto;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid black;
 }
 
 .sctn3 .imgs-2 {
@@ -92,9 +97,9 @@
   background-size: cover;
   padding: auto;
   margin: auto;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid black;
 }
 
 .sctn3 .imgs-3 {
@@ -105,13 +110,15 @@
   background-size: cover;
   padding: auto;
   margin: auto;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid black;
 }
 
 .sctn5 {
+  background-color: #242323;
   text-align: center;
+  padding: 2rem;
 }
 
 .sctn5 #insta {
@@ -120,8 +127,8 @@
   padding: 4px;
   color: #ffffff;
   background: none;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
   display: none;
 }
 
@@ -137,16 +144,16 @@
   text-decoration: none;
   font-size: 4rem;
   padding: 4px;
-  color: #FFFC00;
+  color: #fffc00;
   background: none;
 }
 
 .sctn5 #snapchat:link {
-  color: #FFFC00;
+  color: #fffc00;
 }
 
 .sctn5 #snapchat:visited {
-  color: #FFFC00;
+  color: #fffc00;
 }
 
 .sctn5 #twitter {
@@ -330,7 +337,6 @@
   -ms-grid-row: 7;
   -ms-grid-column: 1;
   grid-area: sctn5;
-  background-color: #ffffff;
   height: auto;
   display: block;
 }

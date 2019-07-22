@@ -6,23 +6,34 @@
   background-size: cover;
   padding: auto;
   margin: auto;
-  display: inline-flex;
+  display: inline-table;
+  margin: 10px;
 }
+
+$border-colour: 6px solid black;
 
 .sctn3 {
   text-align: center;
   box-sizing: border-box;
   overflow: auto;
+  text-decoration: none;
+
+  h1 {
+    padding: 20px;
+  }
 
   .imgs-1 {
     @include imgs("/static/blog/img/sosa_image_5.jpg");
+    border: $border-colour;
   }
 
   .imgs-2 {
     @include imgs("/static/blog/img/sosa_image_4.jpg");
+    border: $border-colour;
   }
 
   .imgs-3 {
     @include imgs("/static/blog/img/sosa_image_7.jpg");
+    border: $border-colour;
   }
 }
