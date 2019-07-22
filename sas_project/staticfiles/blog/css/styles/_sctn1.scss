@@ -1,22 +1,23 @@
-@mixin border-shadow() {
+$sct1color: #d8dac8;
+
+@mixin border-shadow($color) {
   padding: 2rem;
   margin: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: $color;
 }
 
 .sctn1 {
   .SectionHeading {
-    @include border-shadow;
+    @include border-shadow($sct1color);
   }
 
   .flex-container {
     border: none;
+    padding: 44px 0px;
   }
-
   .col {
-    @include border-shadow() {
-    }
+    @include border-shadow($sct1color);
   }
 }

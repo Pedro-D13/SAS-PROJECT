@@ -32,7 +32,7 @@ def homepageview(request, *args, **kwargs):
 
 class PostListView(ListView):
     model = Post
-    template_name = "blog/index.html"
+    template_name = "blog2/blog_posts_list.html"
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 3

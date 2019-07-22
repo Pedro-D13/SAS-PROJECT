@@ -6,23 +6,55 @@
   background-size: cover;
   padding: auto;
   margin: auto;
-  display: inline-flex;
+  display: inline-table;
+  margin: 10px;
 }
+
+$border-colour1: 6px solid black;
+$border-colour2: 6px solid grey;
 
 .sctn3 {
   text-align: center;
   box-sizing: border-box;
   overflow: auto;
+  text-decoration: none;
+
+  h1 {
+    padding: 0px 10px;
+    margin-top: 3rem;
+  }
 
   .imgs-1 {
-    @include imgs("/static/blog/img/sosa_image_5.jpg");
+    @include imgs("/static/blog/img/sosa_image_12.jpg");
+    border: $border-colour1;
   }
 
   .imgs-2 {
     @include imgs("/static/blog/img/sosa_image_4.jpg");
+    border: $border-colour1;
   }
 
   .imgs-3 {
     @include imgs("/static/blog/img/sosa_image_7.jpg");
+    border: $border-colour1;
+  }
+
+  #past-events {
+    color: grey;
+  }
+
+  .imgs-4 {
+    @include imgs("/static/blog/img/sosa_image_11.jpg");
+    border: $border-colour2;
+  }
+
+  .imgs-5 {
+    @include imgs("/static/blog/img/sosa_image_9.jpg");
+    border: $border-colour2;
+  }
+
+  .imgs-6 {
+    @include imgs("/static/blog/img/sosa_image_2.jpg");
+    border: $border-colour2;
   }
 }

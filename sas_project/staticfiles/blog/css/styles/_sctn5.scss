@@ -1,44 +1,55 @@
 @mixin icons($color) {
-    text-decoration: none;
-    font-size: 4rem;
-    padding: 4px;
+  text-decoration: none;
+  font-size: 4rem;
+  padding: 4px;
+  color: $color;
+  background: none;
+
+  &:link {
     color: $color;
-    background: none;
+  }
 
-    &:link {
-        color: $color;
-    }
-
-    &:visited {
-        color: $color;
-    }
-
+  &:visited {
+    color: $color;
+  }
 }
 
-
 .sctn5 {
-    text-align: center;
+  background-color: #242323;
+  text-align: center;
+  padding: 2rem;
 
-    #insta {
-        @include icons(#ffffff);
-        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-        background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-        display: none;
-    }
+  p {
+    margin: 1rem;
+  }
 
-    #snapchat {
-        @include icons(#FFFC00)
-    }
+  #insta {
+    @include icons(#ffffff);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    background: -webkit-radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    display: none;
+  }
 
-    #twitter {
-        @include icons(#00acee)
-    }
+  #snapchat {
+    @include icons(#fffc00);
+  }
 
-    #youtube {
-        @include icons(red)
-    }
+  #twitter {
+    @include icons(#00acee);
+  }
 
-    #facebook {
-        @include icons(#3b5998)
-    }
+  #youtube {
+    @include icons(red);
+  }
+
+  #facebook {
+    @include icons(#3b5998);
+  }
 }

@@ -1,10 +1,16 @@
-@import "./sctn1", "./sctn3", "./sctn5", "./topnav", "./mixins";
+@import "./sctn1", "./sctn2", "./sctn3", "./sctn5", "./topnav", "./mixins";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin: 1rem;
 }
 
 /* Layout for the Page  */
@@ -38,13 +44,14 @@
 
 .sctn2 {
   grid-area: sctn2;
+  background-color: red;
   height: 10vh;
 }
 
 .sctn3 {
   grid-area: sctn3;
   display: block;
-  z-index: -1;
+  z-index: 0;
   padding: 20px;
 }
 
@@ -57,7 +64,6 @@
 
 .sctn5 {
   grid-area: sctn5;
-  background-color: #ffffff;
   height: auto;
   display: block;
 }
