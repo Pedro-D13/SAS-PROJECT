@@ -5,6 +5,7 @@
 <html lang="en">
 
 <head>
+    {% block links %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,68 +14,71 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title> Homepage </title>
-
+    {% endblock links %}
 </head>
 
 <body>
-
     {% block navigation %}
-    <div class="container">
-        <div class="topnav" id="navbar">
-            <a href="#SOSA" style="text-decoration: none">
+    <nav>
+        <div class="container">
+            <div class="topnav" id="navbar">
                 <div class="logo">
+                    <a href="#SOSA" style="text-decoration: none"></a>
                     SOSA
                 </div>
-            </a>
-            <div class="topnavspace"> </div>
-            <div class="navlinks">
-                <a href=""> Home </a>
-                <a href="{% url 'blog:post_all' %} "> Blog </a>
-                <a href=""> Gallery </a>
-                <a href=""> Events </a>
-                <a href=""> About </a>
-                <a href=""> Contact us </a>
-            </div>
-        </div>
-        {% endblock %}
-
-
-
-        {% block heroimage %}
-        <div class="hero-image">
-            <div class="hero-text">
-                <h1 style="margin-right: 40%;"> Welcome to the SOSA </h1>
-                <h2>
-                    The Heart of diveristy
-                </h2>
-                <h1 style="margin-left: 40%;"> We Live Laugh & Love </h1>
-                <div class="btn-div">
-                    <div class="btn"> Join us </div>
-                    <div class="btn"> Learn more </div>
+                <div class="navlinks">
+                    <a href="{% url 'blog:homepage' %}"> Home </a>
+                    <a href="{% url 'blog:post_all' %} "> Blog </a>
+                    <a href=""> Gallery </a>
+                    <a href=""> Events </a>
+                    <a href=""> About </a>
+                    <a href=""> Contact us </a>
                 </div>
             </div>
-        </div>
+    </nav>
+    {% endblock %}
+
+    <main>
+
+        {% block heroimage %}
+        <section>
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1 style="margin-right: 40%;"> Welcome to the SOSA </h1>
+                    <h2>
+                        The Heart of diveristy
+                    </h2>
+                    <h1 style="margin-left: 40%;"> We Live Laugh & Love </h1>
+                    <div class="btn-div">
+                        <div class="btn"> Join us </div>
+                        <div class="btn"> Learn more </div>
+                    </div>
+
+                    <hr>
+                    <br>
+                    <p> We are the Bournmouths Universities <br> Society of South Asia </p>
+                    <p> Learn About us our mission below </p>
+                </div>
+
+            </div>
+        </section>
         {% endblock %}
 
         {% block sctn1 %}
         <section class="sctn1" id="SOSA">
-
+            <!-- 
             <div class="SectionHeading">
-                <h2> About us </h2>
-                <p> We are the Bournmouths Universities <br> Society of South Asia </p>
-                <p> Learn About what we are trying to achieve and what we have acheived below </p>
+
+            </div> -->
+            {% for post in posts %}
+            <div class="flex-container">
+                <h3> {{ post.title }} </h3>
+                <p> {{ post.content | truncatewords:20 }}<a href="{% url 'blog:post_detail' post.id %}"> Continue
+                        reading</a> </p>
             </div>
 
-            <div class="flex-container">
-                {% for post in posts %}
-                <div class="col">
-                    <img src="" alt="">
-                    <h3> {{ post.title }} </h3>
-                    <p> {{ post.content | truncatewords:12 }} </p>
-                    <a href="{% url 'blog:post_detail' post.id %}"> Continue reading</a>
-                </div>
-                {% endfor %}
-            </div>
+            {% endfor %}
+
 
         </section>
         {% endblock sctn1%}
@@ -108,19 +112,14 @@
         <section class="sctn3">
 
             <h1> Come to any of these upcoming events </h1>
-            <div>
-                <a href="">
-                    <div class="imgs-1"></div>
-                </a>
 
-                <a href="">
-                    <div class="imgs-2"></div>
-                </a>
-                <a href="">
-                    <div class="imgs-3"></div>
-                </a>
+            <img src="../static/blog/img/sosa_image_12.jpg" alt="upcoming event 1" title="SOSA events">
 
-            </div>
+            <img src="/static/blog/img/sosa_image_4.jpg" alt="upcoming event 2" title="SOSA events">
+
+            <img src="/static/blog/img/sosa_image_7.jpg" alt="upcoming event 3" title="SOSA events">
+
+
             <div>
                 <h1 id="past-events"> or check out some of our past ones</h1>
                 <a href="">
@@ -146,19 +145,20 @@
 
         </section>
         {% endblock sctn4 %}
+    </main>
 
-        {% block sctn5 %}
-        <section class="sctn5">
-            <h2>Style Social Media Buttons</h2>
-            <a href="#" class="fa fa-youtube" id="youtube"></a>
-            <a href="#" class="fa fa-twitter" id="twitter"></a>
-            <a href="#" class="fa fa-instagram" id="insta"></a>
-            <a href="#" class="fa fa-snapchat-ghost" id="snapchat"></a>
-            <a href="#" class="fa fa-facebook" id="facebook"></a>
-            <p> Get into contact with us from the links about or the contact information below </p>
-        </section>
-        {% endblock sctn5 %}
-    </div>
+    {% block sctn5 %}
+    <section class="sctn5">
+        <h2>Style Social Media Buttons</h2>
+        <a href="#" class="fa fa-youtube" id="youtube"></a>
+        <a href="#" class="fa fa-twitter" id="twitter"></a>
+        <a href="#" class="fa fa-instagram" id="insta"></a>
+        <a href="#" class="fa fa-snapchat-ghost" id="snapchat"></a>
+        <a href="#" class="fa fa-facebook" id="facebook"></a>
+        <p> Get into contact with us from the links about or the contact information below </p>
+    </section>
+    {% endblock sctn5 %}
+
 </body>
 
 

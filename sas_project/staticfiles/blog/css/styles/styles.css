@@ -1,4 +1,47 @@
 /* nav bar css start */
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/* Nav bar css end  */
+.btn-div {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.btn-div .btn {
+  margin: 2px 2em;
+  border: 2px solid rgba(95, 94, 104, 0.16);
+  background-color: rgba(255, 226, 226, 0.53);
+  color: white;
+  padding: 14px 22px;
+  display: inline;
+  font-size: 16px;
+  display: inline;
+  cursor: pointer;
+  -webkit-transition: font-size 0.7s;
+  transition: font-size 0.7s;
+  border-radius: 3px;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+.btn-div .btn:hover {
+  border: inherit;
+  background-color: rgba(22, 38, 41, 0.167);
+  color: white;
+  font-size: 1em;
+}
+
 /* Jumbo }start */
 body,
 html {
@@ -25,15 +68,6 @@ section.sctn1 {
   padding: 2em;
 }
 
-.col {
-  border: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 1rem;
-  padding: 20px 40px;
-}
-
 .SectionHeading {
   text-align: center;
 }
@@ -45,18 +79,6 @@ section.sctn2 {
   height: auto;
   text-align: center;
   color: white;
-}
-
-img {
-  padding: 0 6px;
-  display: none;
-  width: 20%;
-}
-
-img.gallery_peek {
-  padding: 0 6px;
-  float: top;
-  width: 20%;
 }
 
 .tab {
@@ -72,8 +94,8 @@ img.gallery_peek {
 }
 
 .hero-image {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/static/blog/img/nightsky.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/nightsky.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/static/blog/img/hero_image.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/hero_image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

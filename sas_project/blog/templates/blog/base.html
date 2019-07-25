@@ -14,7 +14,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-light bg-light ">
-        <a class="navbar-brand justify-content-start" href="{% url 'blog:post_home' %}">
+        <a class="navbar-brand justify-content-start" href="{% url 'blog:homepage' %}">
             <img src="{% static 'blog/img/sas.png' %}" alt="sas logo" class="rounded-circle" width="40" height="40">
             The SAS Project </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -24,7 +24,7 @@
 
         <div class="container text-center">
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <a class="nav-link text-darken-2" href="{% url 'blog:post_home' %}"> Home </a>
+                <a class="nav-link text-darken-2" href="{% url 'blog:homepage' %}"> Home </a>
                 <a class="nav-link text-darken-2" href="{% url 'blog:post_all'%}">Blog</a>
                 <a class="nav-link text-darken-2" href="{% url 'blog:blog_about' %}">Mission</a>
                 <a class="nav-link text-darken-2" href="{% url 'blog:blog_gallery' %}">Gallery</a>
@@ -55,8 +55,8 @@
             </div>
             {% else %}
             <a href="{% url 'register' %}">
-            <button type="button" class="btn btn-flat btn-primary">
-                Register</button>
+                <button type="button" class="btn btn-flat btn-primary">
+                    Register</button>
             </a>
             {% endif %}
         </div>

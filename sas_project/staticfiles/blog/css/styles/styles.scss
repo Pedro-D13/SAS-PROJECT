@@ -3,48 +3,44 @@
 
 $primarycolour: rgb(0, 0, 0);
 
-@mixin btn() {
-  margin: 2px 2em;
-  border: 2px solid $btn1color;
-  background-color: rgba(255, 255, 255, 0);
-  color: rgba(0, 0, 0, 0.496);
-  padding: 14px 22px;
-  display: inline;
-  font-size: 16px;
-  display: inline;
-  cursor: pointer;
-  transition: font-size 0.7s;
-  border-radius: 3px;
-  transition-duration: 0.4s;
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
-  &:hover {
-    border: inherit;
-    background-color: rgba(22, 38, 41, 0.167);
-    color: rgb(255, 255, 255);
-    font-size: 1em;
-  }
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky+.content {
+  padding-top: 60px;
+}
 
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
+/* Nav bar css end  */
 
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
-    padding-top: 60px;
-  }
+$btn1color: rgba(95, 94, 104, 0.16);
 
-  /* Nav bar css end  */
+.btn-div {
+  display: inline-flex;
 
-  $btn1color: rgba(55, 55, 55, 0);
+  .btn {
+    margin: 2px 2em;
+    border: 2px solid $btn1color;
+    background-color: rgba(255, 226, 226, 0.53);
+    color: white;
+    padding: 14px 22px;
+    display: inline;
+    font-size: 16px;
+    display: inline;
+    cursor: pointer;
+    transition: font-size 0.7s;
+    border-radius: 3px;
+    transition-duration: 0.4s;
 
-  .btn-div {
-    display: inline-flex;
-
-    .btn {
-      @include btn();
+    &:hover {
+      border: inherit;
+      background-color: rgba(22, 38, 41, 0.167);
+      color: rgb(255, 255, 255);
+      font-size: 1em;
     }
   }
 }
@@ -72,13 +68,6 @@ section.sctn1 {
   padding: 2em;
 }
 
-.col {
-  border: none;
-  justify-content: center;
-  margin: 1rem;
-  padding: 20px 40px;
-}
-
 .SectionHeading {
   text-align: center;
 }
@@ -90,18 +79,6 @@ section.sctn2 {
   height: auto;
   text-align: center;
   color: white;
-}
-
-img {
-  padding: 0 6px;
-  display: none;
-  width: 20%;
-}
-
-img.gallery_peek {
-  padding: 0 6px;
-  float: top;
-  width: 20%;
 }
 
 .tab {
@@ -117,7 +94,7 @@ img.gallery_peek {
 }
 
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/nightsky.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/hero_image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -2,17 +2,22 @@
 
 /* Nav bar top, links , logo and spacing */
 .topnav {
-    padding: 2em;
+    padding: 0.5em;
     grid-area: topnav;
     background-color: rgb(255, 255, 255);
-    display: flex;
+    display: inline-flex;
     position: fixed;
+
+    align-content: center;
     /* Set the navbar to fixed position */
     top: 0;
     /* Position the navbar at the top of the page */
     width: 100%;
     /* Full width */
     z-index: 1;
+    overflow: hidden;
+    float: right;
+    text-decoration: none;
 
     .logo {
         padding: auto;
@@ -31,22 +36,26 @@
     }
 
     .topnavspace {
-        margin: auto;
+        margin: 1rem;
     }
 
-    .navlinks a {
-        display: inline;
-        color: rgb(145, 60, 60);
-        text-align: center;
-        text-decoration: none;
-        padding: 1em 2em;
-        margin: 0.5em;
-        font-size: 16px;
-        transition-duration: 0.5s;
+    .navlinks {
+        margin: auto;
 
-        &:hover {
-            background-color: rgb(119, 119, 132);
-            color: rgb(0, 0, 0);
+        .navlinks a {
+            display: inline-flexbox;
+            color: rgb(145, 60, 60);
+            text-align: center;
+            text-decoration: none;
+            padding: 2rem;
+            margin: auto;
+            font-size: 16px;
+            transition-duration: 0.5s;
+
+            &:hover {
+                background-color: rgb(119, 119, 132);
+                color: rgb(0, 0, 0);
+            }
         }
     }
 }

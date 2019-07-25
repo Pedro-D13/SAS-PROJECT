@@ -81,18 +81,6 @@ section.sctn2 {
   color: white;
 }
 
-img {
-  padding: 0 6px;
-  display: none;
-  width: 20%;
-}
-
-img.gallery_peek {
-  padding: 0 6px;
-  float: top;
-  width: 20%;
-}
-
 .tab {
   background-color: #4caf50;
   /* Green */
@@ -106,8 +94,8 @@ img.gallery_peek {
 }
 
 .hero-image {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/static/blog/img/nightsky.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/nightsky.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/static/blog/img/hero_image.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/hero_image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
