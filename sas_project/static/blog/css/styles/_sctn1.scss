@@ -1,24 +1,31 @@
  @import "./mixins";
 
- $sct1color:#f7f5ec;
+ //  $sct1color:#013140;
+ //  $colour:linear-gradient(to right, #013140, #a0045d);
 
  .sctn1 {
-   .flex-container {
-     background-color: #f7f5ec;
-     padding: 44px 0px;
-     margin: 1rem;
-     @include border-shadow($sct1color);
+   color: white;
 
-     p {
+
+   .flex-container {
+     @include flex-container();
+     @include border-shadow();
+
+     .flex-item {
+       @include flex-item();
+
+     }
+
+     p,
+     h3 {
        display: flex;
        align-items: center;
        justify-content: space-around;
        line-height: 1.5;
      }
-   }
 
-   .col {
-     @include border-shadow($sct1color);
+     .col {
+       @include border-shadow();
+     }
    }
-
  }

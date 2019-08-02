@@ -13,152 +13,109 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/styles/styles.css' %}">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title> Homepage </title>
+
     {% endblock links %}
+    {% block title %} <title> Homepage </title> {% endblock %}
 </head>
 
-<body>
+<body class="container">
     {% block navigation %}
-    <nav>
-        <div class="container">
-            <div class="topnav" id="navbar">
-                <div class="logo">
-                    <a href="#SOSA" style="text-decoration: none"></a>
-                    SOSA
-                </div>
-                <div class="navlinks">
-                    <a href="{% url 'blog:homepage' %}"> Home </a>
-                    <a href="{% url 'blog:post_all' %} "> Blog </a>
-                    <a href=""> Gallery </a>
-                    <a href=""> Events </a>
-                    <a href=""> About </a>
-                    <a href=""> Contact us </a>
-                </div>
-            </div>
+    <nav class="topnav">
+        <div class="navlinks" id="navbar">
+            <h1 class="logo-h1"> <a class="logo" href="#SOSA"> SOSA </a></h1>
+            <ul class="nav-list">
+                <a href=" {% url 'blog:homepage' %}"> Home </a>
+                <a href="{% url 'blog:post_all' %} "> Blog </a>
+                <a href=""> Gallery </a>
+                <a href=""> Events </a>
+                <a href="{% url 'blog:blog_about' %}"> About </a>
+                <a href=""> Contact us </a>
+            </ul>
+        </div>
+        <div class="hamburger-menu" id="collapsed" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <ul>
+            <a href=" {% url 'blog:homepage' %}"> Home </a>
+            <a href="{% url 'blog:post_all' %} "> Blog </a>
+            <a href=""> Gallery </a>
+            <a href=""> Events </a>
+            <a href="{% url 'blog:blog_about' %}"> About </a>
+            <a href=""> Contact us </a>
+        </ul>
+        </div>
+
+
+
+        <div class="profile">
+            {% if user.is_authenticated %}
+            <a href="{ d% url 'profile' %}"> {{user}} profile </a>
+            {% endif %}
+        </div>
     </nav>
     {% endblock %}
-
     <main>
 
+        {% block auth %}
+        <!-- if is authenticate the just say hi user name -->
+
+        {% if user.is_authenticated %}
+        <button href="{% url 'logout' %}" type="button" class="btn"> Logout </button>
+        {% else %}
+        <button href="{% url 'login' %}" type="button" class="btn"> Login </button>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <button href="{% url 'profile' %}" type="button" class="btn ">Profile</button>
+        <div>
+            <a href="{% url 'blog:post_new' %}"> create a post </a>
+        </div>
+        {% else %}
+        <a href="{% url 'register' %}">
+            <button type="button" class="btn">
+                Register</button>
+        </a>
+
+        {% endif %}
+        {% endblock %}
+
         {% block heroimage %}
-        <section>
-            <div class="hero-image">
-                <div class="hero-text">
-                    <h1 style="margin-right: 40%;"> Welcome to the SOSA </h1>
-                    <h2>
-                        The Heart of diveristy
-                    </h2>
-                    <h1 style="margin-left: 40%;"> We Live Laugh & Love </h1>
-                    <div class="btn-div">
-                        <div class="btn"> Join us </div>
-                        <div class="btn"> Learn more </div>
-                    </div>
-
-                    <hr>
-                    <br>
-                    <p> We are the Bournmouths Universities <br> Society of South Asia </p>
-                    <p> Learn About us our mission below </p>
-                </div>
-
-            </div>
-        </section>
         {% endblock %}
 
         {% block sctn1 %}
-        <section class="sctn1" id="SOSA">
-            <!-- 
-            <div class="SectionHeading">
-
-            </div> -->
-            {% for post in posts %}
-            <div class="flex-container">
-                <h3> {{ post.title }} </h3>
-                <p> {{ post.content | truncatewords:20 }}<a href="{% url 'blog:post_detail' post.id %}"> Continue
-                        reading</a> </p>
-            </div>
-
-            {% endfor %}
-
-
-        </section>
         {% endblock sctn1%}
 
 
         {% block sctn2 %}
-        <section class="sctn2">
-
-            <div>
-                <h3 class="SectionHeading">
-                    Get involved with our
-                    <br>
-                    <br>
-                    Upcoming Events
-                </h3>
-            </div>
-            <div class="flex-container">
-                {% for event in events %}
-                <div class="col">
-                    <h3>{{ event.title }} taking place on the {{ event.event_date }} & @
-                        {{ event.event_time }} </h3>
-                    <p> {{ event.desc }} </p>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
         {% endblock sctn2 %}
 
 
         {% block sctn3 %}
-        <section class="sctn3">
-
-            <h1> Come to any of these upcoming events </h1>
-
-            <img src="../static/blog/img/sosa_image_12.jpg" alt="upcoming event 1" title="SOSA events">
-
-            <img src="/static/blog/img/sosa_image_4.jpg" alt="upcoming event 2" title="SOSA events">
-
-            <img src="/static/blog/img/sosa_image_7.jpg" alt="upcoming event 3" title="SOSA events">
-
-
-            <div>
-                <h1 id="past-events"> or check out some of our past ones</h1>
-                <a href="">
-                    <div class="imgs-4"></div>
-                </a>
-
-                <a href="">
-                    <div class="imgs-5"></div>
-                </a>
-                <a href="">
-                    <div class="imgs-6"></div>
-                </a>
-            </div>
-        </section>
         {% endblock sctn3 %}
 
         {% block sctn4 %}
-        <section class="sctn4">
-
-            <div class="shout_out">
-                <h2> Created by Pedro Dias </h2>
-            </div>
-
-        </section>
         {% endblock sctn4 %}
+
+
+        {% block sctn5 %}
+        <section class="sctn5">
+            <h2>Style Social Media Buttons</h2>
+            <!-- make the links smaller -->
+            <a href="#" class="fa fa-youtube" id="youtube"></a>
+            <a href="#" class="fa fa-twitter" id="twitter"></a>
+            <a href="#" class="fa fa-instagram" id="insta"></a>
+            <a href="#" class="fa fa-snapchat-ghost" id="snapchat"></a>
+            <a href="#" class="fa fa-facebook" id="facebook"></a>
+            <p> Get into contact with us from the links about or the contact information below </p>
+        </section>
+        {% endblock sctn5 %}
+
     </main>
+    <script>
 
-    {% block sctn5 %}
-    <section class="sctn5">
-        <h2>Style Social Media Buttons</h2>
-        <a href="#" class="fa fa-youtube" id="youtube"></a>
-        <a href="#" class="fa fa-twitter" id="twitter"></a>
-        <a href="#" class="fa fa-instagram" id="insta"></a>
-        <a href="#" class="fa fa-snapchat-ghost" id="snapchat"></a>
-        <a href="#" class="fa fa-facebook" id="facebook"></a>
-        <p> Get into contact with us from the links about or the contact information below </p>
-    </section>
-    {% endblock sctn5 %}
-
+    </script>
 </body>
 
 

@@ -133,7 +133,7 @@ STATICFILES_DIRS = (
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'blog/templates')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = "media/"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

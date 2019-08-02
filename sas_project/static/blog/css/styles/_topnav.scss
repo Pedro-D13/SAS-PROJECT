@@ -5,60 +5,47 @@
     padding: auto;
     grid-area: topnav;
     background-color: rgb(255, 255, 255);
-    display: inline-flex;
+    display: flexbox;
+    flex-direction: row;
+    width: 100vw;
     position: fixed;
-
     /* Set the navbar to fixed position */
     top: 0;
     /* Position the navbar at the top of the page */
-    width: 100%;
     /* Full width */
     z-index: 1;
-    overflow: hidden;
     text-decoration: none;
-    float: left;
-
-    .logo {
-        padding: 1rem;
-        align-content: center;
-        text-align: start;
-        font-size: inherit;
-        transition: font-size 0.5s;
-        text-decoration: none;
-        justify-content: left;
-
-
-        &:hover {
-            font-size: 170%;
-        }
-    }
 
     a:visited,
     a:link {
         color: black;
     }
 
-    .topnavspace {
-        margin: 1rem;
+    .logo-h1 {
+        color: rgb(29, 28, 28);
+        display: flex;
+        align-content: center;
+        font-size: 2rem;
+        transition: font-size 0.5s;
+        text-decoration: none;
+        margin-right: auto;
     }
 
     .navlinks {
+        width: 100vw;
+        display: flex;
         margin-top: 10px;
-        margin-left: auto;
-        margin-right: auto;
-
-        max-width: 100%;
+        align-items: center;
+        height: 40px;
 
         a {
-            display: inline;
-            overflow: hidden;
-            color: rgb(145, 60, 60);
-            text-align: center;
+            padding: 10px;
+            margin: 1em;
+            color: rgb(0, 0, 0);
             text-decoration: none;
-            padding: 0.5rem;
-            margin: 0.5rem;
-            font-size: 16px;
-            transition-duration: 0.5s;
+            font-size: inherit;
+            transition-duration: 0.3s;
+            border-radius: 15px;
 
             &:hover {
                 background-color: rgb(119, 119, 132);
@@ -66,15 +53,30 @@
             }
         }
     }
-}
 
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
 
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky+.content {
-    padding-top: 60px;
+    /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+    .sticky+.content {
+        padding-top: 60px;
+    }
+
+
+    // #collapsed {
+    //     display: none;
+    // }
+    @media screen and (max-width:735px) {
+        #navbar {
+            display: none;
+        }
+
+        #collapsed {
+            display: block;
+            flex-direction: column;
+        }
+    }
 }

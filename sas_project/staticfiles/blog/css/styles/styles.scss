@@ -1,23 +1,41 @@
 /* nav bar css start */
 @import "./mixins";
 
+$colour:grey;
 $primarycolour: rgb(0, 0, 0);
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky+.content {
-  padding-top: 60px;
-}
-
-/* Nav bar css end  */
-
 $btn1color: rgba(95, 94, 104, 0.16);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+hr {
+  margin: 1rem;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Open Sans";
+  font-size: 1em;
+}
 
 .btn-div {
   display: inline-flex;
@@ -45,56 +63,9 @@ $btn1color: rgba(95, 94, 104, 0.16);
   }
 }
 
-/* Jumbo }start */
-body,
-html {
-  height: 100%;
-  font-family: "Open Sans";
-  font-size: 22px;
-}
-
-/* jumbo end */
-
-section.sctn1 {
-  display: block;
-  padding: 40px 80px;
-  height: auto;
-  text-align: center;
-}
-
-.flex-container {
-  display: flex;
-  justify-content: center;
-  padding: 2em;
-}
-
-.SectionHeading {
-  text-align: center;
-}
-
-section.sctn2 {
-  display: block;
-  padding: 40px 70px;
-  background: rgb(36, 35, 35);
-  height: auto;
-  text-align: center;
-  color: white;
-}
-
-.tab {
-  background-color: #4caf50;
-  /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/hero_image.jpg");
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/colour_splash3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -112,7 +83,29 @@ section.sctn2 {
   }
 }
 
-.imgg {
-  scale: 20%;
-  height: auto;
+.thumbnail-container {
+  padding: auto 0;
+  max-width: 300px;
+
+  justify-content: center;
+  display: flexbox;
+
+  .thumbnail {
+    border-radius: 20px;
+    margin: auto 0;
+    width: 100px;
+    overflow: auto;
+  }
+
+}
+
+.profile {
+  padding: 20px auto;
+  align-content: center;
+  text-align: center;
+}
+
+.flex-container {
+  @include flex-container();
+  @include border-shadow();
 }

@@ -4,7 +4,7 @@ $sctn2color: #79797339;
 
 .sctn2 {
   .SectionHeading {
-    @include border-shadow($sctn2color);
+    @include border-shadow();
   }
 
   .flex-container {
@@ -13,6 +13,6 @@ $sctn2color: #79797339;
   }
 
   .col {
-    @include border-shadow($sctn2color);
+    @include border-shadow();
   }
 }
