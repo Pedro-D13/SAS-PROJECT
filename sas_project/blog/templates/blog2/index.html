@@ -2,21 +2,23 @@
 
 {% load static %}
 
+
+
+
 {% block heroimage %}
-<section>
+<section class="section">
     <div class="hero-image">
         <div class="hero-text">
-            <h1 style="margin-right: 40%;"> Welcome to the SOSA </h1>
+            <h1> Welcome to the SOSA </h1>
             <h1>
                 The Heart of diveristy
             </h1>
-            <h1 style="margin-left: 40%;"> We Live Laugh & Love </h1>
+            <h1> We Live Laugh & Love </h1>
             <div class="btn-div">
                 <div class="btn"> Join us </div>
-                <div class="btn"> <a href="{% url 'blog:blog_about' %}"> Learn
+                <div class="btn"> <a href="{% url 'blog:blog_about' %}" style> Learn
                         more </a> </div>
             </div>
-
             <hr>
             <br>
             <p> We are the Bournmouths Universities <br> Society of South Asia </p>
@@ -26,7 +28,6 @@
     </div>
 </section>
 {% endblock %}
-
 
 {% block sctn1 %}
 <section class="sctn1" id="SOSA">

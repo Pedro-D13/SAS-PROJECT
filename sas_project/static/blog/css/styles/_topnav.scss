@@ -65,6 +65,10 @@
         padding-top: 60px;
     }
 
+    .profile {
+        margin-right: auto;
+        justify-content: right;
+    }
 
     // #collapsed {
     //     display: none;
@@ -75,7 +79,10 @@
         }
 
         #collapsed {
-            display: block;
+            display: flex;
+        }
+
+        #flex-items {
             flex-direction: column;
         }
     }
