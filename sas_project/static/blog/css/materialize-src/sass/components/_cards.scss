@@ -1,7 +1,5 @@
-
-
 .card-panel {
-  transition: box-shadow .25s;
+  transition: box-shadow 0.25s;
   padding: $card-padding;
   margin: $element-top-margin 0 $element-bottom-margin 0;
   border-radius: 2px;
@@ -13,7 +11,7 @@
   position: relative;
   margin: $element-top-margin 0 $element-bottom-margin 0;
   background-color: $card-bg-color;
-  transition: box-shadow .25s;
+  transition: box-shadow 0.25s;
   border-radius: 2px;
   @extend .z-depth-1;
 
@@ -21,29 +19,35 @@
   .card-title {
     font-size: 24px;
     font-weight: 300;
+
     &.activator {
       cursor: pointer;
     }
   }
 
   // Card Sizes
-  &.small, &.medium, &.large {
+  &.small,
+  &.medium,
+  &.large {
     position: relative;
 
     .card-image {
       max-height: 60%;
-      overflow: hidden;
+
     }
-    .card-image + .card-content {
+
+    .card-image+.card-content {
       max-height: 40%;
     }
+
     .card-content {
       max-height: 100%;
       overflow: hidden;
     }
+
     .card-action {
       position: absolute;
-      bottom: 0;
+      top: 300px;
       left: 0;
       right: 0;
     }
@@ -63,7 +67,10 @@
 
   // Horizontal Cards
   &.horizontal {
-    &.small, &.medium, &.large {
+
+    &.small,
+    &.medium,
+    &.large {
       .card-image {
         height: 100%;
         max-height: none;
@@ -79,6 +86,7 @@
 
     .card-image {
       max-width: 50%;
+
       img {
         border-radius: 2px 0 0 2px;
         max-width: 100%;
@@ -110,9 +118,6 @@
     }
   }
 
-
-
-
   .card-image {
     position: relative;
 
@@ -142,9 +147,11 @@
     padding: $card-padding;
     border-radius: 0 0 2px 2px;
 
+
     p {
       margin: 0;
     }
+
     .card-title {
       display: block;
       line-height: 32px;
@@ -157,21 +164,28 @@
   }
 
   .card-action {
+
     &:last-child {
       border-radius: 0 0 2px 2px;
     }
+
     background-color: inherit; // Use inherit to inherit color classes
-    border-top: 1px solid rgba(160,160,160,.2);
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
     position: relative;
     padding: 16px $card-padding;
+
+
+
 
     a:not(.btn):not(.btn-large):not(.btn-floating) {
       color: $card-link-color;
       margin-right: $card-padding;
-      transition: color .3s ease;
+      transition: color 0.3s ease;
       text-transform: uppercase;
 
-      &:hover { color: $card-link-color-light; }
+      &:hover {
+        color: $card-link-color-light;
+      }
     }
   }
 

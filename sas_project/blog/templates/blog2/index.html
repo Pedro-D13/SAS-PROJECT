@@ -2,9 +2,6 @@
 
 {% load static %}
 
-
-
-
 {% block heroimage %}
 <section class="section">
     <div class="hero-image">
@@ -15,87 +12,150 @@
             </h1>
             <h1> We Live Laugh & Love </h1>
             <div class="btn-div">
-                <div class="btn"> Join us </div>
-                <div class="btn"> <a href="{% url 'blog:blog_about' %}" style> Learn
-                        more </a> </div>
+                <a href="{% url 'register' %}" class="btn"> Join us </a>
+                <a href="{% url 'blog:blog_about' %}" class="btn"> Learn
+                    more </a>
             </div>
             <hr>
             <br>
             <p> We are the Bournmouths Universities <br> Society of South Asia </p>
             <p> Learn About us our mission below </p>
         </div>
-
     </div>
 </section>
 {% endblock %}
 
 {% block sctn1 %}
 <section class="sctn1" id="SOSA">
-    <article class="flex-container">
+    <article class="row">
         {% for post in posts %}
         {% if post.img %}
-        <div class="flex-item">
-            <span class="thumbnail-container">
-                <img class="thumbnail" src="{{ post.img.url }}" alt="">
-            </span>
-            <h3> {{ post.title }} </h3>
-            <p> {{ post.content | truncatewords:20 }} </p>
-            <a href=" {% url 'blog:post_detail' post.id %}"> Continue
-                reading </a>
+        <div class="col s12 m6 l4">
+            <div class="card" style="min-height:400px;">
+                <div class="card-image">
+                    <img alt="" style="height: 200px; background-image:url('{{post.img.url}}'); background-size:cover;">
+                    <div class="card-title"> {{ post.title }} </div>
+                </div>
+                <div class="card-content">
+                    <p> {{ post.content | truncatewords:20 }} </p>
+                </div>
+                <div class="card-action">
+                    <a href=" {% url 'blog:post_detail' post.id %}"> Continue
+                        reading </a>
+                </div>
+            </div>
         </div>
         {% else %}
-        <div class="flex-item">
-            <h3> {{ post.title }} </h3>
-            <p> {{ post.content | truncatewords:20 }} </p>
-            <a href=" {% url 'blog:post_detail' post.id %}"> Continue
-                reading</a>
+        <div class="card s12 m4 l4">
+            <div class="card-image">
+                <img src="{{ post.img.url }}" alt="">
+                <span> {{ post.title }} </span>
+            </div>
+            <div class="card-content">
+                <p> {{ post.content | truncatewords:20 }} </p>
+            </div>
+            <div class="card-action">
+                <a href=" {% url 'blog:post_detail' post.id %}"> Continue
+                    reading </a>
+            </div>
         </div>
         {% endif %}
         {% endfor %}
-    </article>
 
+    </article>
 </section>
 {% endblock sctn1%}
 
 
 {% block sctn2 %}
-<section class="sctn2">
 
-    <div>
-        <h3 class="SectionHeading">
-            Get involved with our
-            <br>
-            <br>
-            Upcoming Events
-        </h3>
-    </div>
-    <div class="flex-container">
-        {% for event in events %}
-        <div class="col">
-            <h3>{{ event.title }} taking place on the {{ event.event_date }} & @
-                {{ event.event_time }} </h3>
-            <p> {{ event.desc }} </p>
+<section class="sctn2">
+    <article class="row">
+        <div class="container">
+
+
+            <h3 class="SectionHeading">
+                Get involved with our
+                <div class="card">
+                    {% for event in events %}
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img src="{{ event.img.url }}" alt="" class="circle" style="max-width:30vh;">
+                    </div>
+                    <div class=" card-content">
+                        <span class="card-title activator grey-text text-darken-4"><i
+                                class="material-icons right">more_vert</i></span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i
+                                class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <br>
+
+                Upcoming Events
+            </h3>
         </div>
-        {% endfor %}
-    </div>
+        <div class="container">
+
+            <ul class="collection with-header">
+                <li class="collection-header">
+                    <h4>First Names</h4>
+                </li>
+
+                <div>
+                    <li class="collection-item">
+                        <h3> taking place on the & @
+                        </h3>
+                        <p> </p>
+                    </li>
+                </div>
+
+                <ul class="collection">
+                    {% for event in events %}
+                    <li class="collection-item avatar">
+
+                        <span class="title">{{ event.title }}</span>
+                        <p> {{ event.event_date }} <br>
+                            {{ event.event_time }}
+                            {{ event.desc }}
+                        </p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+        </div>
+    </article>
 </section>
 {% endblock sctn2 %}
 
 
 {% block sctn3 %}
 <section class="sctn3">
-
-    <h1> Come to any of these upcoming events </h1>
-
-    <img src="../static/blog/img/sosa_image_12.jpg" alt="upcoming event 1" title="SOSA events">
-
-    <img src="/static/blog/img/sosa_image_4.jpg" alt="upcoming event 2" title="SOSA events">
-
-    <img src="/static/blog/img/sosa_image_7.jpg" alt="upcoming event 3" title="SOSA events">
+    <div class="container">
 
 
+
+        <div class="row">
+            <h1> Come to any of these upcoming events </h1>
+        </div>
+        <div class="container">
+            <div class="col-2">
+                <img src="../static/blog/img/sosa_image_12.jpg" alt="upcoming event 1" title="SOSA events">
+            </div>
+            <div class="col-2">
+                <img src="../static/blog/img/sosa_image_4.jpg" alt="upcoming event 1" title="SOSA events">
+            </div>
+            <div class="col-2">
+                <img src="../static/blog/img/sosa_image_7.jpg" alt="upcoming event 1" title="SOSA events">
+            </div>
+        </div>
+    </div>
     <div>
-        <h1 id="past-events"> or check out some of our past ones</h1>
+        <h1 id="past-events"> or check out some of our past ones </h1>
         <a href="">
             <div class="imgs-4"></div>
         </a>

@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/materialize-src/sass/materialize.css' %}">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     {% endblock links %}
     {% block title %} <title> Homepage </title> {% endblock %}
 </head>
@@ -20,9 +20,10 @@
     {% block navigation %}
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo"> SOSA </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"> Menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <a href="{% url 'blog:homepage' %}" class="brand-logo"> SOSA </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">&#xe5d2;</i>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:1rem;">
                 <li class="active"><a href=" {% url 'blog:homepage' %}"> Home </a></li>
                 <li><a href="{% url 'blog:post_all' %} "> Blog </a></li>
                 <li><a href=""> Gallery </a></li>
@@ -54,23 +55,21 @@
             <!-- if is authenticate the just say hi user name -->
 
             {% if user.is_authenticated %}
-            <button href="{% url 'logout' %}" type="button" class="btn"> Logout </button>
+            <a href="{% url 'logout' %}" type="button" class="btn"> Logout </a>
             {% else %}
-            <button href="{% url 'login' %}" type="button" class="btn"> Login </button>
+            <a href="{% url 'login' %}" type="button" class="btn"> Login </a>
             {% endif %}
 
             {% if user.is_authenticated %}
-            <button href="{% url 'profile' %}" type="button" class="btn ">Profile</button>
+            <a href="{% url 'profile' %}" type="button" class="btn">Profile</a>
             <br>
             <div class="btn">
                 <a href="{% url 'blog:post_new' %}"> create a post </a>
             </div>
             {% else %}
-            <a href="{% url 'register' %}">
-                <button type="button" class="btn">
-                    Register</button>
+            <a href="{% url 'register' %}" type="button" class="btn">
+                Register
             </a>
-
             {% endif %}
             {% endblock %}
         </div>
@@ -105,24 +104,17 @@
             <a href="#" class="fa fa-facebook" id="facebook"></a>
             <p> Get into contact with us from the links about or the contact information below </p>
         </section>
-        {% endblock sctn5 %}
 
+        {% endblock sctn5 %}
     </main>
-    <script>
+
+    <script type="text/javascript" src="{% static 'blog/css/materialize-src/js/bin/materialize.js' %}">
+
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems, options);
-        }
+        });
 
-        );
-
-        // Or with jQuery
-
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
-        }
-
-        );
     </script>
 </body>
 

@@ -1,5 +1,7 @@
 /* nav bar css start */
 @import "./mixins";
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 
 $colour:grey;
 $primarycolour: rgb(0, 0, 0);
@@ -9,9 +11,8 @@ $btn1color: rgba(95, 94, 104, 0.16);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-
 
 h1 {
   font-size: 2rem;
