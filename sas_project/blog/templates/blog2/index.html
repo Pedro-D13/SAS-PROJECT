@@ -46,17 +46,16 @@
             </div>
         </div>
         {% else %}
-        <div class="card s12 m4 l4">
-            <div class="card-image">
-                <img src="{{ post.img.url }}" alt="">
-                <span> {{ post.title }} </span>
-            </div>
-            <div class="card-content">
-                <p> {{ post.content | truncatewords:20 }} </p>
-            </div>
-            <div class="card-action">
-                <a href=" {% url 'blog:post_detail' post.id %}"> Continue
-                    reading </a>
+        <div class="col s12 m6 l4">
+            <div class="card s12 m4 l4">
+                <div class="card-title"> {{ post.title }} </div>
+                <div class="card-content">
+                    <p> {{ post.content | truncatewords:20 }} </p>
+                </div>
+                <div class="card-action">
+                    <a href=" {% url 'blog:post_detail' post.id %}"> Continue
+                        reading </a>
+                </div>
             </div>
         </div>
         {% endif %}
@@ -71,111 +70,58 @@
 
 <section class="sctn2">
     <article class="row">
-        <div class="container">
-
-
-            <h3 class="SectionHeading">
-                Get involved with our
-                <div class="card">
-                    {% for event in events %}
+        <div class="container" ">
+            <h2 class=" SectionHeading" style="text-align: center;">
+            Get involved with our Upcoming events
+            </h2>
+            {% for event in events %}
+            <div class="col s12 m6 l2" style="text-align: center; justify-content:center;">
+                <div class=" card">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img src="{{ event.img.url }}" alt="" class="circle" style="max-width:30vh;">
+                        <img class="activator" src="{{ event.img.url }}" style="height:30vh;">
                     </div>
-                    <div class=" card-content">
-                        <span class="card-title activator grey-text text-darken-4"><i
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"> {{ event.title }}<i
                                 class="material-icons right">more_vert</i></span>
                         <p><a href="#">This is a link</a></p>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Card Title<i
+                        <span class="card-title grey-text text-darken-4">{{ event.title }}<i
                                 class="material-icons right">close</i></span>
-                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
-                    {% endfor %}
-                </div>
-
-                <br>
-
-                Upcoming Events
-            </h3>
-        </div>
-        <div class="container">
-
-            <ul class="collection with-header">
-                <li class="collection-header">
-                    <h4>First Names</h4>
-                </li>
-
-                <div>
-                    <li class="collection-item">
-                        <h3> taking place on the & @
-                        </h3>
-                        <p> </p>
-                    </li>
-                </div>
-
-                <ul class="collection">
-                    {% for event in events %}
-                    <li class="collection-item avatar">
-
-                        <span class="title">{{ event.title }}</span>
-                        <p> {{ event.event_date }} <br>
-                            {{ event.event_time }}
-                            {{ event.desc }}
+                        <p>
+                            {{ event.desc}}
                         </p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                    </li>
-                    {% endfor %}
-                </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </article>
 </section>
 {% endblock sctn2 %}
-
-
 {% block sctn3 %}
-<section class="sctn3">
-    <div class="container">
-
-
-
-        <div class="row">
-            <h1> Come to any of these upcoming events </h1>
-        </div>
-        <div class="container">
-            <div class="col-2">
-                <img src="../static/blog/img/sosa_image_12.jpg" alt="upcoming event 1" title="SOSA events">
-            </div>
-            <div class="col-2">
-                <img src="../static/blog/img/sosa_image_4.jpg" alt="upcoming event 1" title="SOSA events">
-            </div>
-            <div class="col-2">
-                <img src="../static/blog/img/sosa_image_7.jpg" alt="upcoming event 1" title="SOSA events">
-            </div>
-        </div>
-    </div>
-    <div>
-        <h1 id="past-events"> or check out some of our past ones </h1>
-        <a href="">
-            <div class="imgs-4"></div>
-        </a>
-
-        <a href="">
-            <div class="imgs-5"></div>
-        </a>
-        <a href="">
-            <div class="imgs-6"></div>
-        </a>
-    </div>
-</section>
+<br>
 {% endblock sctn3 %}
 
 {% block sctn4 %}
-<section class="sctn4">
-
-    <div class="shout_out">
-        <h2> Created by Pedro Dias </h2>
-    </div>
-
-</section>
+<div class="container">
+    <ul class="collection with-header">
+        <li class="collection-header">
+            <h3>Meet the Members</h3>
+            <ul class="collection">
+                {% for event in events %}
+                <li class="collection-item avatar">
+                    <span class="title"> {{ event.title }} </span>
+                    <p> {{ event.event_date }}
+                        <br>
+                        {{ event.event_time }}
+                        {{ event.desc }}
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons"> Members </i></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</div>
 {% endblock sctn4 %}

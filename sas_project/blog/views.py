@@ -12,8 +12,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from .models import Post, Event
 
-# Create your views here.
-
 
 class BaseTemplate(ListView):
     model = Post
@@ -24,7 +22,7 @@ class BaseTemplate(ListView):
 
 
 def homepageview(request, *args, **kwargs):
-    posts = Post.objects.all().order_by('-date_posted')[:3]
+    posts = Post.objects.all().order_by('-date_posted')[:6]
     events = Event.objects.all().order_by('-event_date')[:3]
     context = {'posts': posts, 'events': events}
     return render(request, 'blog2/index.html', context)
@@ -65,8 +63,8 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content', 'image']
-    template_name = "blog/post_form.html"
+    fields = ['title', 'content', 'img']
+    template_name = "blog2/post_form.html"
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -75,8 +73,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content', 'image']
-    template_name = "blog/post_form.html"
+    fields = ['title', 'content', 'img']
+    template_name = "blog2/post_form.html"
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -103,7 +101,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class EventListView(ListView):
     model = Event
-    template_name = "blog/event.html"
+    template_name = "blog2/event.html"
     context_object_name = "events"
 
 
@@ -115,11 +113,13 @@ class EventDetailView(DetailView):
 
 
 def gallery(request):
-    path = "static/blog/img"
-    img_list = os.listdir(path)
-    return render(request, 'blog2/mat_gallery.html', {'images': img_list})
+    img_list = os.listdir("static/blog/img")
+    for _ in img_list:
+        if _ == ".DS_Store":
+            img_list.remove(_)
+    return render(request, 'blog2/gallery.html', {'img_list': img_list})
 
 
 def about(request):
     context = {'posts': Post.objects.all()}
-    return render(request, 'blog/about.html', context)
+    return render(request, 'blog2/about.html', context)
