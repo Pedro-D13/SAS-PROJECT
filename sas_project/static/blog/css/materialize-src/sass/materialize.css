@@ -4519,12 +4519,30 @@ html {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  font-family: "Lobster", cursive;
+  color: #e3874d;
+}
+
+h2,
+h3 {
+  font-family: "Vollkorn", serif;
+  color: #e8a276;
+}
+
+h4,
+h5,
+h6 {
   font-weight: 400;
   line-height: 1.3;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   font-weight: inherit;
 }
 
@@ -9038,8 +9056,8 @@ input[type=range]::-ms-thumb {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/static/blog/img/colour_splash3.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/colour_splash3.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/static/blog/img/hero_image.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/hero_image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

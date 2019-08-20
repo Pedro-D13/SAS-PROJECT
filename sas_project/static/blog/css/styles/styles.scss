@@ -1,9 +1,8 @@
 /* nav bar css start */
-@import "./mixins";
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import "./mixins", "./hero";
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
-
-$colour:grey;
+$colour: grey;
 $primarycolour: rgb(0, 0, 0);
 $btn1color: rgba(95, 94, 104, 0.16);
 
@@ -20,7 +19,6 @@ h1 {
 
 h2 {
   font-size: 1.3rem;
-
 }
 
 h3 {
@@ -64,26 +62,6 @@ html {
   }
 }
 
-.hero-image {
-
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/colour_splash3.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  display: flex;
-
-  .hero-text {
-    width: 80%;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-  }
-}
-
 .thumbnail-container {
   padding: auto 0;
   max-width: 300px;
@@ -97,7 +75,6 @@ html {
     width: 100px;
     overflow: auto;
   }
-
 }
 
 .profile {
