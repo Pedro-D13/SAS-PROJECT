@@ -24,7 +24,8 @@ class BaseTemplate(ListView):
 def homepageview(request, *args, **kwargs):
     posts = Post.objects.all().order_by('-date_posted')[:6]
     events = Event.objects.all().order_by('-event_date')[:3]
-    context = {'posts': posts, 'events': events}
+    staff = User.objects.filter(is_staff=True)
+    context = {'posts': posts, 'events': events, 'staff': staff}
     return render(request, 'blog2/index.html', context)
 
 
