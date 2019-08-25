@@ -1,14 +1,12 @@
 # Sosa-PROJECT
+SOSA project was made with the objective to create a website for Bournemouth's University's very own Society of South Asia.
 
-Project currently has a working homepage with relevant links to blog posts.
+The project allows site vistors to view the latest Blog Posts created by the Commitee members regarding a matter of topics and subjects.
 
-Working Users login along with users having profiles that can be updated.
+As well get organised Upcoming event information with the dates time and location.
 
-password resets also currently working.
+Users of the site can signup to the sight and will be able to comment on the posts and the upcoming events.
 
-Gallery app still underworks.
+Users can create profles which consists of the username and a profile image. Password resets also available if users forget.
 
-about page still underworks.
-
-Homepage colour theme needs to be changed, requires colour suggestions from soceties president.
-
+Gallery page uses images posted on Societies social media such as instagram and facebook. 
