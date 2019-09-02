@@ -2,42 +2,71 @@
 
 {% load static %}
 
-{% block heroimage %}
-<section class="section">
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1> Welcome to the SOSA </h1>
-            <h1>
-                The Heart of diveristy
-            </h1>
-            <h1> We Live Laugh & Love </h1>
-            <div class="btn-div">
-                <a href="{% url 'register' %}" class="btn"> Join us </a>
-                <a href="{% url 'blog:blog_about' %}" class="btn"> Learn
-                    more </a>
-            </div>
-            <hr>
-            <br>
-            <h3> We are the Bournmouths Universities <br> Society of South Asia </h3>
-            <h3> Learn About us our mission below </h3>
-        </div>
+
+{% block navigation %}
+<nav>
+    <div class="nav-wrapper">
+        <a href="{% url 'blog:homepage' %}" class="brand-logo center" style="padding: 0px;margin:0px;"><img
+                src="{% static 'blog/img/lotus.jpeg' %}" alt="" style="max-height:64px;"></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:1rem;">
+            <li class="active"><a href="{% url 'blog:homepage' %}"> Home </a></li>
+            <li><a href="{% url 'blog:post_all' %} "> Blog </a></li>
+            <li><a href="{% url 'blog:blog_gallery' %}"> Gallery </a></li>
+            <li><a href="{% url 'blog:event_list' %}"> Events </a></li>
+            <li><a href="{% url 'blog:blog_about' %}"> About </a></li>
+            <li><a href=""> Contact us </a></li>
+        </ul>
     </div>
-</section>
-{% endblock %}
+</nav>
+<ul class="sidenav" id="mobile-demo">
+    <li><a href=" {% url 'blog:homepage' %}"> Home </a></li>
+    <li><a href="{% url 'blog:post_all' %} "> Blog </a></li>
+    <li><a href="{% url 'blog:blog_gallery' %}"> Gallery </a></li>
+    <li><a href="{% url 'blog:event_list' %}"> Events </a></li>
+    <li><a href="{% url 'blog:blog_about' %}"> About </a></li>
+    <li><a href=""> Contact us </a> </li>
+</ul>
+{% endblock navigation %}
+
+{% block auth %}
+<!-- if is authenticate the just say hi user name -->
+<div>
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}" class="btn"> Logout </a>
+    {% else %}
+    <a href="{% url 'login' %}" class="btn"> Login </a>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <a href="{% url 'profile' %}" class="btn">Profile</a>
+    <a href="{% url 'blog:post_new' %}" class="btn"> create a post </a>
+    {% else %}
+    <a href="{% url 'register' %}" class="btn">
+        Register
+    </a>
+    {% endif %}
+</div>
+{% endblock auth %}
 
 {% block sctn1 %}
 <section class="sctn1" id="SOSA">
+    <div class="parallax"></div>
     <article class="row">
         {% for post in posts %}
-        {% if post.img %}
-        <div class="col s12 m6 l4">
-            <div class="card" style="min-height:400px;">
-                <div class="card-image">
-                    <img alt="" style="height: 200px; background-image:url('{{post.img.url}}'); background-size:cover;">
+        {% if post.img.url %}
+        <div class="col s12 offset-m2 m8 l4">
+            <div class="card" style="min-height:365px;">
+                <div class="card-image" style="overflow:hidden;">
+                    <img alt="" style="height: 200px; background-image:linear-gradient(
+                                                                rgba(0, 0, 0, 0.5),
+                                                                rgba(0, 0, 0, 0.5)), 
+                                                                url('{{ post.img.url }}');
+                                                                background-size:cover;">
                     <div class="card-title"> {{ post.title }} </div>
                 </div>
                 <div class="card-content">
-                    <p> {{ post.content | truncatewords:20 }} </p>
+                    <p> {{ post.content | truncatewords:13 }} </p>
                 </div>
                 <div class="card-action">
                     <a href=" {% url 'blog:post_detail' post.id %}"> Continue
@@ -45,29 +74,13 @@
                 </div>
             </div>
         </div>
-        {% else %}
-        <div class="col s12 m6 l4">
-            <div class="card s12 m4 l4">
-                <div class="card-title"> {{ post.title }} </div>
-                <div class="card-content">
-                    <p> {{ post.content | truncatewords:20 }} </p>
-                </div>
-                <div class="card-action">
-                    <a href=" {% url 'blog:post_detail' post.id %}"> Continue
-                        reading </a>
-                </div>
-            </div>
-        </div>
-        {% endif %}
+        {% endif%}
         {% endfor %}
-
     </article>
 </section>
 {% endblock sctn1%}
 
-
 {% block sctn2 %}
-
 <section class="sctn2">
     <article class="row">
         <div class="container" style="max-width:70vw;">
@@ -75,23 +88,24 @@
                 Get involved with our Upcoming events
             </h2>
             {% for event in events %}
-            <div class="col s12 m6 l4">
+            <div class="col s12 offset-m2 m8 l4">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="{{ event.img.url }}" style="max-width:30vw;">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4"> {{ event.title }}<i
+                        <span class="card-title activator grey-text text-darken-6"> {{ event.title }}<i
                                 class="material-icons right">more_vert</i></span>
-
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">{{ event.title }}<i
                                 class="material-icons right">close</i></span>
-                        <p>
+                        <p class="flow-text">
                             {{ event.desc}}
                         </p>
-                        <a class="btn" style="margin-top:50%;" href="#"> Click here to learn more about
+                        <a class="btn" style="margin-top:50%;" href="{% url 'blog:event_detail' event.id %}"> Click here
+                            to
+                            learn more about
                             it
                         </a>
                     </div>
@@ -108,18 +122,30 @@
 {% endblock sctn3 %}
 
 {% block sctn4 %}
-<div class="container" style="max-width: 80vw;">
-    <ul class="collection">
-        {% for member in staff %}
-        <li class="collection-item avatar">
-            <img src="{{ member.profile.image.url }}" alt="" class="circle">
-            <span class="title"> {{ member }} </span>
-            <p> {{member.first_name }} <br>
-                {{member.email}}
-            </p>
-            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+<section class="sctn4">
+    <div class="container" style="max-width: 80vw;">
+        <ul class="collection">
+            {% for member in staff %}
+
+            <li class="collection-item avatar">
+                <img src="{{ member.profile.image.url }}" alt="" class="circle">
+                <span class="title">
+                    <a href=""> {{ member }} </a></span>
+                <p> {{member.first_name }}
+                    <br>
+                    {% if not member.profile.role.blank %}
+                    {{member.profile.role}}
+                    {% else %}
+                    {% lorem %}
+                    {% endif %}
+                    <br>
+                    <!-- clicking this should take them to fill out the contact form to email that individual -->
+                    <a href="#" class="waves-effect waves-light btn-small"> {{member}}
+                    </a>
+                </p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
 {% endblock sctn4 %}

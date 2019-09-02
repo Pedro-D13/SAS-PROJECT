@@ -1,20 +1,11 @@
 @import "./hero", "./sctn1", "./sctn2", "./sctn3", "./sctn5", "./topnav", "./mixins";
 
-
 /* Layout for the Page  */
 .container {
   max-height: auto;
   margin: 0;
   display: grid;
   grid-auto-flow: row;
-  // grid-template-areas:
-  //   "topnav topnav topnav"
-  //   "hero hero hero"
-  //   "sctn1 sctn1 sctn1"
-  //   "sctn2 sctn2 sctn2"
-  //   "sctn3 sctn3 sctn3"
-  //   "sctn4 sctn4 sctn4"
-  //   "sctn5 sctn5 sctn5";
 }
 
 /* Hero Image */

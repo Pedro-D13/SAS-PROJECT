@@ -1,5 +1,7 @@
 import os
 import json
+from blog.forms import ContactForm
+from django.views.generic.edit import FormView
 from django.views import View
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import (ListView,
@@ -11,6 +13,7 @@ from django.views.generic import (ListView,
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from .models import Post, Event
+from django.core.mail import send_mail
 
 
 class BaseTemplate(ListView):
@@ -22,7 +25,7 @@ class BaseTemplate(ListView):
 
 
 def homepageview(request, *args, **kwargs):
-    posts = Post.objects.all().order_by('-date_posted')[:6]
+    posts = Post.objects.all().order_by('-date_posted')[:3]
     events = Event.objects.all().order_by('-event_date')[:3]
     staff = User.objects.filter(is_staff=True)
     context = {'posts': posts, 'events': events, 'staff': staff}
@@ -39,7 +42,7 @@ class PostListView(ListView):
 
 class UserPostListView(ListView):
     model = Post
-    template_name = "blog/user_posts.html"
+    template_name = "blog2/user_posts.html"
     context_object_name = 'posts'
     paginate_by = 5
 
@@ -107,7 +110,9 @@ class EventListView(ListView):
 
 
 class EventDetailView(DetailView):
-    pass
+    model = Event
+    template_name = "blog2/event_detail.html"
+    context_object_name = "event"
 
 # class EventCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 #     pass
@@ -124,3 +129,28 @@ def gallery(request):
 def about(request):
     context = {'posts': Post.objects.all()}
     return render(request, 'blog2/about.html', context)
+
+
+class ContactView(FormView):
+    template_name = ''
+    form_class = ContactForm
+    success_url = "blog2/success.html"
+
+    def form_valid(self, form):
+        form.send_email()
+        return super().form_valid(form)
+
+
+# def contact_member(request):
+#     if form.is_valid():
+#         subject = form.cleaned_data['subject']
+#         message = form.cleaned_data['message']
+#         sender = form.cleaned_data['sender']
+#         cc_myself = form.cleaned_data['cc_myself']
+
+#         recipients = ['info@example.com']
+#         if cc_myself:
+#             recipients.append(sender)
+
+#         send_mail(subject, message, sender, recipients)
+#         return HttpResponseRedirect('/thanks/')

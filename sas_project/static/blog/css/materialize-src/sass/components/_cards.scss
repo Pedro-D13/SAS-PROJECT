@@ -1,3 +1,5 @@
+$card-link-color: #f47a63;
+
 .card-panel {
   transition: box-shadow 0.25s;
   padding: $card-padding;
@@ -12,9 +14,8 @@
   margin: $element-top-margin 0 $element-bottom-margin 0;
   background-color: $card-bg-color;
   transition: box-shadow 0.25s;
-  border-radius: 2px;
+  border-radius: 50;
   @extend .z-depth-1;
-
 
   .card-title {
     font-size: 24px;
@@ -32,11 +33,10 @@
     position: relative;
 
     .card-image {
-      max-height: 60%;
-
+      max-height: 30vh;
     }
 
-    .card-image+.card-content {
+    .card-image + .card-content {
       max-height: 40%;
     }
 
@@ -67,7 +67,6 @@
 
   // Horizontal Cards
   &.horizontal {
-
     &.small,
     &.medium,
     &.large {
@@ -140,13 +139,14 @@
       left: 0;
       max-width: 100%;
       padding: $card-padding;
+      font-style: inherit;
+      font-family: "Berkshire Swash", cursive;
     }
   }
 
   .card-content {
     padding: $card-padding;
     border-radius: 0 0 2px 2px;
-
 
     p {
       margin: 0;
@@ -164,7 +164,6 @@
   }
 
   .card-action {
-
     &:last-child {
       border-radius: 0 0 2px 2px;
     }
@@ -173,9 +172,6 @@
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     position: relative;
     padding: 16px $card-padding;
-
-
-
 
     a:not(.btn):not(.btn-large):not(.btn-floating) {
       color: $card-link-color;

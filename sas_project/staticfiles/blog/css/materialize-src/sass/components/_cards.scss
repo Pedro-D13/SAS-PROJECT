@@ -1,3 +1,5 @@
+$card-link-color: #f47a63;
+
 .card-panel {
   transition: box-shadow 0.25s;
   padding: $card-padding;
@@ -12,12 +14,13 @@
   margin: $element-top-margin 0 $element-bottom-margin 0;
   background-color: $card-bg-color;
   transition: box-shadow 0.25s;
-  border-radius: 2px;
+  border-radius: 50;
   @extend .z-depth-1;
 
   .card-title {
     font-size: 24px;
     font-weight: 300;
+
     &.activator {
       cursor: pointer;
     }
@@ -30,19 +33,21 @@
     position: relative;
 
     .card-image {
-      max-height: 60%;
-      overflow: hidden;
+      max-height: 30vh;
     }
+
     .card-image + .card-content {
       max-height: 40%;
     }
+
     .card-content {
       max-height: 100%;
       overflow: hidden;
     }
+
     .card-action {
       position: absolute;
-      bottom: 0;
+      top: 300px;
       left: 0;
       right: 0;
     }
@@ -80,6 +85,7 @@
 
     .card-image {
       max-width: 50%;
+
       img {
         border-radius: 2px 0 0 2px;
         max-width: 100%;
@@ -133,6 +139,8 @@
       left: 0;
       max-width: 100%;
       padding: $card-padding;
+      font-style: inherit;
+      font-family: "Berkshire Swash", cursive;
     }
   }
 
@@ -143,6 +151,7 @@
     p {
       margin: 0;
     }
+
     .card-title {
       display: block;
       line-height: 32px;
@@ -158,6 +167,7 @@
     &:last-child {
       border-radius: 0 0 2px 2px;
     }
+
     background-color: inherit; // Use inherit to inherit color classes
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     position: relative;

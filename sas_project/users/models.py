@@ -10,7 +10,7 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default="member.png", upload_to="profile_pics")
-    role = models.TextField(max_length=200, blank=True, default="SOSA Member")
+    role = models.TextField(max_length=500, blank=True, default="SOSA Member")
 
     def __str__(self):
         return f"{self.user.username} Profile"

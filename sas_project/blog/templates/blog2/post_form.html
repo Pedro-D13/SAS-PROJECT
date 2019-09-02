@@ -3,6 +3,22 @@
 {% load crispy_forms_tags %}
 
 {% block sctn1 %}
+
+<div class="row" style="margin-top:10vh;">
+    <form class="col s12" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="input-field col s12">
+                {{ form | crispy }}
+            </div>
+            <button class="btn" type="submit"> Post </button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+
 <div class="container" style="max-width:60vw;">
     <form method="POST">
         {% csrf_token %}
@@ -11,8 +27,7 @@
             {{ form | crispy }}
         </fieldset>
         <div class="form-group">
-            <button class="btn btn-outline-info" type="submit"> Post </button>
+
         </div>
     </form>
 </div>
-{% endblock %}

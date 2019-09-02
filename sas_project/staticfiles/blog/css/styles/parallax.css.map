@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,oBAAoB;EACpB,gBAAgB,EAAE,oCAAoC;EAEtD,2BAA2B;EAC3B,MAAM,EAAE,KAAK;EAEb,0CAA0C;EAC1C,qBAAqB,EAAE,KAAK;EAC5B,mBAAmB,EAAE,MAAM;EAC3B,iBAAiB,EAAE,SAAS;EAC5B,eAAe,EAAE,KAAK;CACvB;;AAED,MAAM,MAAM,MAAM,MAAM,gBAAgB,EAAE,MAAM;EAC9C,AAAA,SAAS,CAAC;IACR,qBAAqB,EAAE,MAAM;GAC9B",
+    "sources": [
+        "parallax.scss"
+    ],
+    "names": [],
+    "file": "parallax.css"
+}

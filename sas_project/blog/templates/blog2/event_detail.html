@@ -1,0 +1,13 @@
+{% extends "blog2/base.html" %}
+
+{% load static %}
+
+{% block sctn1 %}
+<div class="container" style="max-width:80vw;">
+    <h1> {{event.title}} </h1>
+    <img style="background-image:url('static/blog/img/{{event.img}}')">
+    <p> {{event.desc}} </p>
+    <span> {{event.event_date}} </span>
+
+</div>
+{% endblock sctn1%}

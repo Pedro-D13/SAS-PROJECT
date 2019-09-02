@@ -9,7 +9,8 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    img = models.FileField(blank=True)
+    img = models.ImageField(
+        blank=True, default="lotus.jpeg", upload_to="posts_bg")
 
     def __str__(self):
         return self.title
@@ -27,7 +28,3 @@ class Event(models.Model):
 
     def __str__(self):
         return f"{self.title}--{self.event_date}--{self.event_time}"
-
-
-class Gallery(models.Model):
-    img = models.ImageField()

@@ -1,0 +1,17 @@
+.parallax {
+  /* The image used */
+  background-image: url("/static/blog/img/sosa_logo.png");
+  /* Set a specific height */
+  height: 550px;
+  padding-top: 20px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center 110px;
+  background-repeat: no-repeat; //   background-size: cover;
+}
+
+@media only screen and (max-device-width: 1200px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}

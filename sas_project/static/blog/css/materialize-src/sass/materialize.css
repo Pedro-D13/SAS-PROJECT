@@ -3431,7 +3431,7 @@ table span.badge {
 
 .container {
   margin: 0 auto;
-  width: 100vh;
+  width: 100vw;
 }
 
 @media only screen and (min-width: 601px) {
@@ -4292,7 +4292,7 @@ nav.nav-extended .nav-content {
 }
 
 nav a {
-  color: white;
+  color: #f47a63;
 }
 
 nav i,
@@ -4308,7 +4308,7 @@ nav i.material-icons {
 nav .nav-wrapper {
   position: relative;
   height: 100%;
-  background-color: #33396d;
+  background-color: white;
 }
 
 @media only screen and (min-width: 993px) {
@@ -4332,7 +4332,7 @@ nav .sidenav-trigger i {
 
 nav .brand-logo {
   position: absolute;
-  color: white;
+  color: #f47a63;
   display: inline-block;
   font-size: 2.1rem;
   padding: 0;
@@ -4388,8 +4388,8 @@ nav ul {
 }
 
 nav ul li {
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
   float: left;
   padding: 0;
 }
@@ -4399,10 +4399,10 @@ nav ul li.active {
 }
 
 nav ul a {
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
   font-size: 1rem;
-  color: white;
+  color: #f47a63;
   display: block;
   padding: 0 15px;
   cursor: pointer;
@@ -4443,7 +4443,7 @@ nav .input-field input {
   padding-left: 2rem;
 }
 
-nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .input-field input[type=password]:valid, nav .input-field input[type=email]:valid, nav .input-field input[type=url]:valid, nav .input-field input[type=date]:valid {
+nav .input-field input:focus, nav .input-field input[type="text"]:valid, nav .input-field input[type="password"]:valid, nav .input-field input[type="email"]:valid, nav .input-field input[type="url"]:valid, nav .input-field input[type="date"]:valid {
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -4456,12 +4456,12 @@ nav .input-field label {
 
 nav .input-field label i {
   color: rgba(255, 255, 255, 0.7);
-  -webkit-transition: color .3s;
-  transition: color .3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 nav .input-field label.active i {
-  color: white;
+  color: #f47a63;
 }
 
 .navbar-fixed {
@@ -4520,14 +4520,14 @@ html {
 }
 
 h1 {
-  font-family: "Lobster", cursive;
-  color: #e3874d;
+  font-family: 'Berkshire Swash', cursive;
+  color: white;
 }
 
 h2,
 h3 {
-  font-family: "Vollkorn", serif;
-  color: #e8a276;
+  font-family: 'Berkshire Swash', cursive;
+  color: black;
 }
 
 h4,
@@ -4774,7 +4774,7 @@ small {
   transition: -webkit-box-shadow 0.25s;
   transition: box-shadow 0.25s;
   transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
-  border-radius: 2px;
+  border-radius: 50;
 }
 
 .card .card-title {
@@ -4791,7 +4791,7 @@ small {
 }
 
 .card.small .card-image, .card.medium .card-image, .card.large .card-image {
-  max-height: 60%;
+  max-height: 30vh;
 }
 
 .card.small .card-image + .card-content, .card.medium .card-image + .card-content, .card.large .card-image + .card-content {
@@ -4899,6 +4899,8 @@ small {
   left: 0;
   max-width: 100%;
   padding: 24px;
+  font-style: inherit;
+  font-family: "Berkshire Swash", cursive;
 }
 
 .card .card-content {
@@ -4932,7 +4934,7 @@ small {
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
-  color: #ffab40;
+  color: #f47a63;
   margin-right: 24px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
@@ -5264,11 +5266,11 @@ small {
   text-decoration: none;
   margin: 5px;
   color: #fff;
-  background-color: #c1d067;
+  background-color: #ee5d7e;
   text-align: center;
-  letter-spacing: .5px;
-  -webkit-transition: background-color .2s ease-out;
-  transition: background-color .2s ease-out;
+  letter-spacing: 0.5px;
+  -webkit-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
   cursor: pointer;
 }
 
@@ -5288,8 +5290,8 @@ small {
   padding: 0;
   background-color: #26a69a;
   border-radius: 50%;
-  -webkit-transition: background-color .3s;
-  transition: background-color .3s;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
   cursor: pointer;
   vertical-align: middle;
 }
@@ -5506,8 +5508,8 @@ button.btn-floating {
   background-color: transparent;
   color: #343434;
   cursor: pointer;
-  -webkit-transition: background-color .2s;
-  transition: background-color .2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .btn-flat:focus, .btn-flat:hover {
@@ -7612,7 +7614,8 @@ input[type=range]::-ms-thumb {
 }
 
 .sidenav li > a > i,
-.sidenav li > a > [class^="mdi-"], .sidenav li > a li > a > [class*="mdi-"],
+.sidenav li > a > [class^="mdi-"],
+.sidenav li > a li > a > [class*="mdi-"],
 .sidenav li > a > i.material-icons {
   float: left;
   height: 48px;
@@ -7664,7 +7667,9 @@ input[type=range]::-ms-thumb {
   z-index: -1;
 }
 
-.sidenav .user-view .circle, .sidenav .user-view .name, .sidenav .user-view .email {
+.sidenav .user-view .circle,
+.sidenav .user-view .name,
+.sidenav .user-view .email {
   display: block;
 }
 
@@ -9056,8 +9061,6 @@ input[type=range]::-ms-thumb {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("/static/blog/img/colour_splash3.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/blog/img/colour_splash3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

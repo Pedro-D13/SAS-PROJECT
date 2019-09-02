@@ -15,25 +15,33 @@
 
 {% block sctn1 %}
 <section class="sctn1">
-    <div class="selects-container">
-        <div class="row">
+    <div class="container">
+        <ul class="collection" style="margin: 2rem;">
             {% for post in posts %}
-            <div class="col s6 m4 l3">
-                <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-primary">
-                        <a href="{% url 'blog:user_posts' post.author.username %}">{{post.author}}</a>
-                    </strong>
-                    <h3 class="mb-0"> {{ post.title }}</h3>
-                    <div class="mb-1 text-muted">{{ post.date_posted }}</div>
-                    <p class="card-text mb-auto">{{ post.content|truncatewords:20 }}</p>
-                    <a href="{% url 'blog:post_detail' post.id %}" class="stretched-link">Continue reading</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+            <li class="collection-item"> {{post.author}} <br>
+                <span class="title"> {{ post.title }} </span>
+                <p> {{post.content | truncatewords:20 }} <a href="{% url 'blog:post_detail' post.id %}"
+                        class="secondary-content"><i class="material-icons">arrow_forward</i></a></p>
+
+            </li>
+            {% endfor %} </ul>
     </div>
-
-</section>
-{% endblock %}
-
-{% block sctn5 %} <br</b>{% endblock %}
+</section> {% endblock %} {% block sctn5 %} <br> {% endblock %}
+<div class="selects-container">
+    <div class="row">
+        {% for post in posts %}
+        <div class="col s6 m4 l3">
+            <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">
+                    <a href="{% url 'blog:user_posts' post.author.username %}">{{post.author}}</a>
+                </strong>
+                <h3 class="mb-0"> {{ post.title }}</h3>
+                <div class="mb-1 text-muted">{{ post.date_posted }}</div>
+                <p class="card-text mb-auto">{{ post.content|truncatewords:20 }}</p>
+                <a href="{% url 'blog:post_detail' post.id %}" class="stretched-link">Continue
+                    reading</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
