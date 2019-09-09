@@ -1,0 +1,504 @@
+.hero-image {
+  background-image: url("/static/blog/img/Steinfield.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hero-image .hero-text {
+  width: 80%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-image .hero-text .btn-div .btn a:-webkit-any-link, .hero-image .hero-text .btn-div .btn a:link, .hero-image .hero-text .btn-div .btn a:visited {
+  -webkit-text-decoration-color: black;
+          text-decoration-color: black;
+  text-decoration: none;
+}
+
+.hero-image .hero-text .btn-div .btn a:-moz-any-link, .hero-image .hero-text .btn-div .btn a:link, .hero-image .hero-text .btn-div .btn a:visited {
+  text-decoration-color: black;
+  text-decoration: none;
+}
+
+.hero-image .hero-text .btn-div .btn a:any-link, .hero-image .hero-text .btn-div .btn a:link, .hero-image .hero-text .btn-div .btn a:visited {
+  -webkit-text-decoration-color: black;
+          text-decoration-color: black;
+  text-decoration: none;
+}
+
+.sctn1 {
+  color: white;
+}
+
+.sctn1 .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: auto;
+  margin: auto;
+  border-radius: 25px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2rem;
+  margin: 10px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #806580;
+}
+
+.sctn1 .flex-container .flex-item {
+  padding: 10px;
+  margin: 10px;
+  border: 4px solid black;
+  border-radius: 25px;
+  background: rgba(255, 0, 0, 0);
+  width: auto;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  max-width: 400px;
+}
+
+.sctn1 .flex-container p,
+.sctn1 .flex-container h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  line-height: 1.5;
+}
+
+.sctn1 .flex-container .col {
+  padding: 2rem;
+  margin: 10px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #806580;
+}
+
+.sctn1 {
+  color: white;
+}
+
+.sctn1 .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: auto;
+  margin: auto;
+  border-radius: 25px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2rem;
+  margin: 10px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #806580;
+}
+
+.sctn1 .flex-container .flex-item {
+  padding: 10px;
+  margin: 10px;
+  border: 4px solid black;
+  border-radius: 25px;
+  background: rgba(255, 0, 0, 0);
+  width: auto;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  max-width: 400px;
+}
+
+.sctn1 .flex-container p,
+.sctn1 .flex-container h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  line-height: 1.5;
+}
+
+.sctn1 .flex-container .col {
+  padding: 2rem;
+  margin: 10px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #806580;
+}
+
+.sctn2 .SectionHeading {
+  padding: 2rem;
+  margin: 10px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #806580;
+}
+
+.sctn2 .flex-container {
+  border: none;
+  padding: 44px 0px;
+}
+
+.sctn2 .col {
+  padding: 2rem;
+  margin: 10px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #806580;
+}
+
+.sctn3 {
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: auto;
+  text-decoration: none;
+}
+
+.sctn3 h1 {
+  padding: 0px 10px;
+  margin-top: 3rem;
+}
+
+.sctn3 .imgs-1 {
+  width: 20rem;
+  height: 20rem;
+  background-image: url("/static/blog/img/sosa_image_12.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding: auto;
+  margin: auto;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid black;
+}
+
+.sctn3 .imgs-2 {
+  width: 20rem;
+  height: 20rem;
+  background-image: url("/static/blog/img/sosa_image_4.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding: auto;
+  margin: auto;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid black;
+}
+
+.sctn3 .imgs-3 {
+  width: 20rem;
+  height: 20rem;
+  background-image: url("/static/blog/img/sosa_image_7.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding: auto;
+  margin: auto;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid black;
+}
+
+.sctn3 #past-events {
+  color: grey;
+}
+
+.sctn3 .imgs-4 {
+  width: 20rem;
+  height: 20rem;
+  background-image: url("/static/blog/img/sosa_image_11.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding: auto;
+  margin: auto;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid grey;
+}
+
+.sctn3 .imgs-5 {
+  width: 20rem;
+  height: 20rem;
+  background-image: url("/static/blog/img/sosa_image_9.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding: auto;
+  margin: auto;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid grey;
+}
+
+.sctn3 .imgs-6 {
+  width: 20rem;
+  height: 20rem;
+  background-image: url("/static/blog/img/sosa_image_2.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding: auto;
+  margin: auto;
+  display: inline-table;
+  margin: 10px;
+  border: 6px solid grey;
+}
+
+.sctn5 {
+  background-color: #242323;
+  text-align: center;
+  padding: 2rem;
+}
+
+.sctn5 p {
+  margin: 1rem;
+}
+
+.sctn5 #insta {
+  text-decoration: none;
+  font-size: 4rem;
+  padding: 4px;
+  color: #ffffff;
+  background: none;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  border-radius: 25px;
+}
+
+.sctn5 #insta:link {
+  color: #ffffff;
+}
+
+.sctn5 #insta:visited {
+  color: #ffffff;
+}
+
+.sctn5 #snapchat {
+  text-decoration: none;
+  font-size: 4rem;
+  padding: 4px;
+  color: #fffc00;
+  background: none;
+}
+
+.sctn5 #snapchat:link {
+  color: #fffc00;
+}
+
+.sctn5 #snapchat:visited {
+  color: #fffc00;
+}
+
+.sctn5 #twitter {
+  text-decoration: none;
+  font-size: 4rem;
+  padding: 4px;
+  color: #00acee;
+  background: none;
+}
+
+.sctn5 #twitter:link {
+  color: #00acee;
+}
+
+.sctn5 #twitter:visited {
+  color: #00acee;
+}
+
+.sctn5 #youtube {
+  text-decoration: none;
+  font-size: 4rem;
+  padding: 4px;
+  color: red;
+  background: none;
+}
+
+.sctn5 #youtube:link {
+  color: red;
+}
+
+.sctn5 #youtube:visited {
+  color: red;
+}
+
+.sctn5 #facebook {
+  text-decoration: none;
+  font-size: 4rem;
+  padding: 4px;
+  color: #3b5998;
+  background: none;
+}
+
+.sctn5 #facebook:link {
+  color: #3b5998;
+}
+
+.sctn5 #facebook:visited {
+  color: #3b5998;
+}
+
+/* Nav bar top, links , logo and spacing */
+.topnav {
+  padding: auto;
+  grid-area: topnav;
+  background-color: white;
+  display: flexbox;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100vw;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  /* Full width */
+  z-index: 1;
+  text-decoration: none;
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+}
+
+.topnav a:visited,
+.topnav a:link {
+  color: black;
+}
+
+.topnav .logo-h1 {
+  color: #1d1c1c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-size: 2rem;
+  -webkit-transition: font-size 0.5s;
+  transition: font-size 0.5s;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.topnav .navlinks {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+}
+
+.topnav .navlinks a {
+  padding: 10px;
+  margin: 1em;
+  color: black;
+  text-decoration: none;
+  font-size: inherit;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  border-radius: 15px;
+}
+
+.topnav .navlinks a:hover {
+  background-color: #777784;
+  color: black;
+}
+
+.topnav .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.topnav .sticky + .content {
+  padding-top: 60px;
+}
+
+.topnav .profile {
+  margin-right: auto;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+@media screen and (max-width: 735px) {
+  .topnav #navbar {
+    display: none;
+  }
+  .topnav #collapsed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .topnav #flex-items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+/* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.closebtn .closebtn:hover {
+  color: black;
+}
+
+/* When moving the mouse over the close button */
+/*# sourceMappingURL=custom_styles.css.map */

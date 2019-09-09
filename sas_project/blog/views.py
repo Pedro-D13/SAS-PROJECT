@@ -13,6 +13,7 @@ from django.views.generic import (ListView,
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from .models import Post, Event
+from users.models import Profile
 from django.core.mail import send_mail
 
 
@@ -49,8 +50,6 @@ class UserPostListView(ListView):
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get("username"))
         return Post.objects.filter(author=user).order_by('-date_posted')
-
-
 class PostAllView(ListView):
     model = Post
     template_name = "blog2/all_posts_list.html"
@@ -154,3 +153,19 @@ class ContactView(FormView):
 
 #         send_mail(subject, message, sender, recipients)
 #         return HttpResponseRedirect('/thanks/')
+
+
+class StaffProfileView(DetailView):
+    model = User
+    template_name = "blog2/staff_profile.html"
+    context_object_name = "staff"
+
+    def get_queryset(self):
+        staff = User.objects.filter(is_staff=True)
+        staff_profile = staff.filter(id=self.kwargs.get("pk"))
+        return staff_profile
+
+
+# staff = User.objects.all().filter(is_staff="True")
+# staff.profile.id
+# profile1 = Profile.objects.get(id=user1.profile.id)

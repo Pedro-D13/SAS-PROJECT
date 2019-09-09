@@ -1,0 +1,18 @@
+{% extends "blog2/base.html" %}
+
+{% load static %}
+
+
+{% block sctn1 %}
+
+<div class="container">
+    <div class="row" style="background-color: #ee6e73;">
+        <div class="col s10 offset-m2 m8 offset-l3 l6 center">
+            <h1> {{staff}} </h1>
+            <p>{{staff.profile.role}}</p>
+            <a class="btn" href="{% url 'blog:user_posts' staff %}"> all of the users posts </a>
+        </div>
+    </div>
+</div>
+
+{% endblock sctn1 %}

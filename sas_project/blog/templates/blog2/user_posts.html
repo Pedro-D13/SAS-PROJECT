@@ -27,6 +27,10 @@
                 </div>
             </div>
         </div>
+        {% empty %}
+
+        <div> Sorry this {{post.user}} currently doesn't have any posts, check back again in the future! </div>
+
         {% endfor %}
     </div>
     {% if is_paginated %}

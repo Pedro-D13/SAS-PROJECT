@@ -8,13 +8,16 @@ from .views import (homepageview,
                     PostDeleteView,
                     UserPostListView,
                     EventListView,
-                    EventDetailView)
+                    EventDetailView,
+                    StaffProfileView,
+                    )
 # EventCreateView)
 from . import views
 
 app_name = "blog"
 urlpatterns = [
     path('', views.homepageview, name='homepage'),
+    path('profile/<int:pk>/', StaffProfileView.as_view(), name="staff_profile"),
     path('user/<str:username>/', UserPostListView.as_view(), name='user_posts'),
     path('post/<int:pk>/', PostDetailView.as_view(), name="post_detail"),
     path('post/new/', PostCreateView.as_view(), name="post_new"),
