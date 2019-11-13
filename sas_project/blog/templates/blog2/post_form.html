@@ -1,25 +1,11 @@
 {% extends "blog2/base.html" %}
 
 {% load crispy_forms_tags %}
-
+{% block auth %}  {{ block.super }} {% endblock %}
 {% block sctn1 %}
-
-<div class="row" style="margin-top:10vh;">
-    <form class="col s12" method="POST">
-        {% csrf_token %}
-        <div class="row">
-            <div class="input-field col s12">
-                {{ form | crispy }}
-            </div>
-            <button class="btn" type="submit"> Post </button>
-        </div>
-    </form>
-</div>
-
-{% endblock %}
-
-
+<div style="height:10vh"> </div>
 <div class="container" style="max-width:60vw;">
+
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
@@ -27,7 +13,11 @@
             {{ form | crispy }}
         </fieldset>
         <div class="form-group">
-
         </div>
     </form>
 </div>
+<div style="height:10vh"> </div>
+
+{% endblock sctn1 %}
+
+

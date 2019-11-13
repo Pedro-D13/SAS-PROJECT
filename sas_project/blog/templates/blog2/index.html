@@ -1,62 +1,20 @@
 {% extends "blog2/base.html" %}
-
 {% load static %}
 
-
 {% block navigation %}
-<nav>
-    <div class="nav-wrapper">
-        <a href="{% url 'blog:homepage' %}" class="brand-logo center" style="padding: 0px;margin:0px;"><img
-                src="{% static 'blog/img/lotus.jpeg' %}" alt="" style="max-height:64px;"></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:1rem;">
-            <li class="active"><a href="{% url 'blog:homepage' %}"> Home </a></li>
-            <li><a href="{% url 'blog:post_all' %} "> Blog </a></li>
-            <li><a href="{% url 'blog:blog_gallery' %}"> Gallery </a></li>
-            <li><a href="{% url 'blog:event_list' %}"> Events </a></li>
-            <li><a href="{% url 'blog:blog_about' %}"> About </a></li>
-            <li><a href=""> Contact us </a></li>
-        </ul>
-    </div>
-</nav>
-<ul class="sidenav" id="mobile-demo">
-    <li><a href=" {% url 'blog:homepage' %}"> Home </a></li>
-    <li><a href="{% url 'blog:post_all' %} "> Blog </a></li>
-    <li><a href="{% url 'blog:blog_gallery' %}"> Gallery </a></li>
-    <li><a href="{% url 'blog:event_list' %}"> Events </a></li>
-    <li><a href="{% url 'blog:blog_about' %}"> About </a></li>
-    <li><a href=""> Contact us </a> </li>
-</ul>
+{{block.super}}
 {% endblock navigation %}
-
-{% block auth %}
-<!-- if is authenticate the just say hi user name -->
-<div>
-    {% if user.is_authenticated %}
-    <a href="{% url 'logout' %}" class="btn"> Logout </a>
-    {% else %}
-    <a href="{% url 'login' %}" class="btn"> Login </a>
-    {% endif %}
-
-    {% if user.is_authenticated %}
-    <a href="{% url 'profile' %}" class="btn">Profile</a>
-    <a href="{% url 'blog:post_new' %}" class="btn"> create a post </a>
-    {% else %}
-    <a href="{% url 'register' %}" class="btn">
-        Register
-    </a>
-    {% endif %}
-</div>
-{% endblock auth %}
 
 {% block sctn1 %}
 <section class="sctn1" id="SOSA">
-    <div class="parallax"></div>
+    <div class="container_parallax">
+        <div class="parallax"></div>
+    </div>
     <article class="row">
         {% for post in posts %}
         {% if post.img.url %}
         <div class="col s12 offset-m2 m8 l4">
-            <div class="card" style="min-height:365px;">
+            <div class="card hoverable" style="min-height:365px;">
                 <div class="card-image" style="overflow:hidden;">
                     <img alt="" style="height: 200px; background-image:linear-gradient(
                                                                 rgba(0, 0, 0, 0.5),
@@ -79,20 +37,16 @@
     </article>
 </section>
 {% endblock sctn1%}
-<div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    This is an alert box.
-</div>
 {% block sctn2 %}
 <section class="sctn2">
     <article class="row">
-        <div class="container" style="max-width:70vw;">
+        <div class="container" style="max-width:95vw;">
             <h2 class=" SectionHeading" style="text-align: center;">
                 Get involved with our Upcoming events
             </h2>
             {% for event in events %}
             <div class="col s12 offset-m2 m8 l4">
-                <div class="card">
+                <div class="card hoverable">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="{{ event.img.url }}" style="max-width:30vw;">
                     </div>
@@ -123,33 +77,44 @@
 {% block sctn3 %}
 <br>
 {% endblock sctn3 %}
-
 {% block sctn4 %}
-<section class="sctn4">
-    <div class="container" style="max-width: 80vw;">
-        <ul class="collection">
-            {% for member in staff %}
+<style>
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-gap: 10px;
+        background-color: #fff;
+        color: #444;
+    }
 
-            <li class="collection-item avatar">
-                <img src="{{ member.profile.image.url }}" alt="" class="circle">
-                <span class="title">
-                    <a href=""> {{ member }} </a></span>
-                <p> {{member.first_name }}
-                    <br>
-                    {% if not member.profile.role.blank %}
-                    {{member.profile.role}}
-                    {% else %}
-                    {% lorem %}
-                    {% endif %}
-                    <br>
-                    <!-- clicking this should take them to fill out the contact form to email that individual -->
-                    <a href="{% url 'blog:staff_profile' member.id %}" class="waves-effect waves-light btn-small">
+    .box {
+        background-color: #edac85;
+        color: white;
+        border-radius: 5px;
+        border-color: #444;
+        padding: 20px;
+        font-size: 150%;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<section class="sctn4">
+    <div class="container" style="max-width: 90vw;">
+        <div class="wrapper">
+            {% for member in staff %}
+            <div class="box"><i class="fas fa-user-tie"></i>
+                <img src="{{ member.profile.image.url }}" alt="" class="circle" style="height:100px;max-width:100px;">
+                <h5><a href="{% url 'blog:staff_profile' member.id %}" class="waves-effect waves-light btn-small">
                         {{member}}
                     </a>
-                </p>
-            </li>
-            {% endfor %}
-        </ul>
+                    {% if not member.profile.role.blank %}
+                    {{member.profile.role | truncatewords:20}}
+                    {% endif %}
+                </h5>
+            </div>
+            {% endfor staff %}
+        </div>
     </div>
 </section>
 {% endblock sctn4 %}

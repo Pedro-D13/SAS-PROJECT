@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="" style="">
+        {% for comment in comments %}
+        <ul>
+            <li> {{ comment.post.content }}</li>
+            <li> {{ comment.comment }}</li>
+            <li> {{ comment.post.author }}</li>
+        </ul>
+        {% endfor %}
+    </p>
+</body>
+
+</html>

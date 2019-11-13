@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://kit.fontawesome.com/9cd150c3b8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     {% block title %} <title> Homepage </title> {% endblock %}
 
     {% endblock links %}
@@ -26,23 +28,25 @@
     {% block navigation %}
     <nav>
         <div class="nav-wrapper">
-            <a href="{% url 'blog:homepage' %}" class="brand-logo center" style="padding: 0px;margin:0px;"><img
-                    src="{% static 'blog/img/lotus.jpeg' %}" alt="" style="max-height:64px;"></a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right:1rem;">
+            <a href="{% url 'blog:homepage' %}" class="brand-logo center" style=><img
+                    src="{% static 'blog/img/lotus.jpeg' %}" alt="" style="height:100vh;max-height:56px;"></a>
+            <a href="#" data-target="dropdown1" class="dropdown-trigger hide-on-large-only"><i class="material-icons"
+                    style="padding:0px;">menu</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down" style="margin-right:1rem;">
                 <li class="active"><a href="{% url 'blog:homepage' %}"> Home </a></li>
                 <li><a href="{% url 'blog:post_all' %} "> Blog </a></li>
-                <li><a href="{% url 'blog:blog_gallery' %}"> Gallery </a></li>
+                <!-- <li><a href="{% url 'blog:blog_gallery' %}"> Gallery </a></li> -->
                 <li><a href="{% url 'blog:event_list' %}"> Events </a></li>
                 <li><a href="{% url 'blog:blog_about' %}"> About </a></li>
                 <li><a href=""> Contact us </a></li>
             </ul>
         </div>
     </nav>
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href=" {% url 'blog:homepage' %}"> Home </a></li>
+
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{% url 'blog:homepage' %}"> Home </a></li>
         <li><a href="{% url 'blog:post_all' %} "> Blog </a></li>
-        <li><a href="{% url 'blog:blog_gallery' %}"> Gallery </a></li>
+        <!-- <li><a href="{% url 'blog:blog_gallery' %}"> Gallery </a></li> -->
         <li><a href="{% url 'blog:event_list' %}"> Events </a></li>
         <li><a href="{% url 'blog:blog_about' %}"> About </a></li>
         <li><a href=""> Contact us </a> </li>
@@ -50,6 +54,23 @@
     {% endblock navigation %}
 
     {% block auth%}
+    <!-- if is authenticate the just say hi user name -->
+    <div>
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="btn"> Logout </a>
+        {% else %}
+        <a href="{% url 'login' %}" class="btn"> Login </a>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <a href="{% url 'profile' %}" class="btn">Profile</a>
+        <a href="{% url 'blog:post_new' %}" class="btn"> create a post </a>
+        {% else %}
+        <a href="{% url 'register' %}" class="btn">
+            Register
+        </a>
+        {% endif %}
+    </div>
     {% endblock auth%}
     <main>
 
@@ -83,7 +104,6 @@
                             <p> Get into contact with us from the links about or the contact information below </p>
                         </div>
                         <div class="fa-items" style="text-align: center;">
-                            <a href="#" class="fa fa-youtube" id="youtube"></a>
                             <a href="#" class="fa fa-twitter" id="twitter"></a>
                             <a href="https://www.instagram.com/societyofsouthasia/?igshid=1v0mg6ipjgsfg"
                                 class="fa fa-instagram" id="insta" target="_blank"></a>
@@ -101,14 +121,10 @@
             </footer>
         </section>
         {% endblock sctn5 %}
+
     </main>
+    <script defer src="{% static 'blog/css/materialize-src/js/mycustomjsfiles.js' %}">
+    </script>
 </body>
-<script>
-    M.AutoInit();
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems, options);
-    });
-</script>
 
 </html>

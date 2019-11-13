@@ -1,11 +1,21 @@
 {% extends "blog2/base.html" %}
+{% load static %}
 
 {% load crispy_forms_tags %}
 
-{% block auth%}
-{% endblock %}
+{% block auth %}
+{% endblock auth %}
 
 {% block sctn1 %}
+<div class="container" style="height:10vh;">
+</div>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %} >{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 <div class="container" style="max-width:70vw;margin-top:5vh;">
     <form method="POST">
         {% csrf_token %}
@@ -27,7 +37,5 @@
         </small>
     </div>
 </div>
-
-
 
 {% endblock %}

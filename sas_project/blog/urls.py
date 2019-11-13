@@ -10,6 +10,7 @@ from .views import (homepageview,
                     EventListView,
                     EventDetailView,
                     StaffProfileView,
+                    CommentListView,
                     )
 # EventCreateView)
 from . import views
@@ -28,4 +29,5 @@ urlpatterns = [
     path('events/<int:pk>/', EventDetailView.as_view(), name="event_detail"),
     path('about/', views.about, name='blog_about'),
     path('gallery/', views.gallery, name='blog_gallery'),
+    path('post/comment/', views.CommentListView.as_view(), name='postcomment'),
 ]
