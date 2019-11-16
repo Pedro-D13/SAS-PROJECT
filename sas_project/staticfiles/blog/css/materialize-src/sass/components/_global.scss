@@ -33,13 +33,13 @@ ul {
     padding-left: 0;
     list-style-type: none;
 
-    &>li {
+    & > li {
       list-style-type: none;
     }
   }
 }
 
-$link-color:inherit;
+$link-color: inherit;
 
 a {
   color: $link-color;
@@ -49,7 +49,6 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-
 // Positioning
 .valign-wrapper {
   display: flex;
@@ -57,12 +56,10 @@ a {
   color: inherit;
 }
 
-
 // classic clearfix
 .clearfix {
   clear: both;
 }
-
 
 // Z-levels
 .z-depth-0 {
@@ -71,9 +68,7 @@ a {
 
 /* 2dp elevation modified*/
 .z-depth-1 {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.12),
-    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .z-depth-1-half {
@@ -82,34 +77,28 @@ a {
 
 /* 6dp elevation modified*/
 .z-depth-2 {
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-    0 1px 10px 0 rgba(0, 0, 0, 0.12),
-    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 /* 12dp elevation modified*/
 .z-depth-3 {
-  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
-    0 3px 14px 2px rgba(0, 0, 0, 0.12),
-    0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
 }
 
 /* 16dp elevation */
 .z-depth-4 {
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-    0 6px 30px 5px rgba(0, 0, 0, 0.12),
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
     0 8px 10px -7px rgba(0, 0, 0, 0.2);
 }
 
 /* 24dp elevation */
 .z-depth-5 {
-  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
-    0 9px 46px 8px rgba(0, 0, 0, 0.12),
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12),
     0 11px 15px -7px rgba(0, 0, 0, 0.2);
 }
 
 .hoverable {
-  transition: box-shadow .25s;
+  transition: box-shadow 0.25s;
 
   &:hover {
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -123,7 +112,6 @@ a {
   overflow: hidden;
   background-color: color("grey", "lighten-2");
 }
-
 
 //  Blockquote
 
@@ -172,11 +160,9 @@ video.responsive-video {
   height: auto;
 }
 
-
 // Pagination
 
 .pagination {
-
   li {
     display: inline-block;
     border-radius: 2px;
@@ -210,7 +196,6 @@ video.responsive-video {
     }
   }
 
-
   li.pages ul li {
     display: inline-block;
     float: none;
@@ -237,7 +222,7 @@ video.responsive-video {
 // Breadcrumbs
 .breadcrumb {
   font-size: 18px;
-  color: rgba(255, 255, 255, .7);
+  color: rgba(255, 255, 255, 0.7);
 
   i,
   [class^="mdi-"],
@@ -249,11 +234,11 @@ video.responsive-video {
   }
 
   &:before {
-    content: '\E5CC';
-    color: rgba(255, 255, 255, .7);
+    content: "\E5CC";
+    color: rgba(255, 255, 255, 0.7);
     vertical-align: top;
     display: inline-block;
-    font-family: 'Material Icons';
+    font-family: "Material Icons";
     font-weight: normal;
     font-style: normal;
     font-size: 25px;
@@ -319,7 +304,6 @@ ul.staggered-list li {
   opacity: 0;
   transform-origin: 0 50%;
 }
-
 
 /*********************
   Media Query Classes
@@ -397,7 +381,6 @@ ul.staggered-list li {
   }
 }
 
-
 // Center text on mobile
 .center-on-small-only {
   @media #{$small-and-down} {
@@ -441,19 +424,19 @@ table {
       border-bottom: none;
     }
 
-    >tbody {
-      >tr:nth-child(odd) {
+    > tbody {
+      > tr:nth-child(odd) {
         background-color: $table-striped-color;
       }
 
-      >tr>td {
+      > tr > td {
         border-radius: 0;
       }
     }
   }
 
-  &.highlight>tbody>tr {
-    transition: background-color .25s ease;
+  &.highlight > tbody > tr {
+    transition: background-color 0.25s ease;
 
     &:hover {
       background-color: $table-striped-color;
@@ -461,7 +444,6 @@ table {
   }
 
   &.centered {
-
     thead tr th,
     tbody tr td {
       text-align: center;
@@ -484,7 +466,6 @@ th {
 
 // Responsive Table
 @media #{$medium-and-down} {
-
   table.responsive-table {
     width: 100%;
     border-collapse: collapse;
@@ -493,7 +474,7 @@ th {
     position: relative;
 
     td:empty:before {
-      content: '\00a0';
+      content: "\00a0";
     }
 
     th,
@@ -555,9 +536,7 @@ th {
       border-right: 1px solid $table-border-color;
     }
   }
-
 }
-
 
 // Collections
 .collection {
@@ -581,8 +560,8 @@ th {
       position: relative;
 
       // Don't style circles inside preloader classes.
-      &:not(.circle-clipper)>.circle,
-      :not(.circle-clipper)>.circle {
+      &:not(.circle-clipper) > .circle,
+      :not(.circle-clipper) > .circle {
         position: absolute;
         width: 42px;
         height: 42px;
@@ -600,7 +579,6 @@ th {
         text-align: center;
       }
 
-
       .title {
         font-size: 16px;
       }
@@ -614,9 +592,7 @@ th {
         top: 16px;
         right: 16px;
       }
-
     }
-
 
     &:last-child {
       border-bottom: none;
@@ -634,7 +610,7 @@ th {
 
   a.collection-item {
     display: block;
-    transition: .25s;
+    transition: 0.25s;
     color: $collection-link-color;
 
     &:not(.active) {
@@ -659,7 +635,6 @@ th {
       padding-left: 72px;
     }
   }
-
 }
 
 // Made less specific to allow easier overriding
@@ -672,8 +647,6 @@ th {
   margin: 0;
   border: none;
 }
-
-
 
 // Responsive Videos
 .video-container {
@@ -710,14 +683,14 @@ th {
     left: 0;
     bottom: 0;
     background-color: $progress-bar-color;
-    transition: width .3s linear;
+    transition: width 0.3s linear;
   }
 
   .indeterminate {
     background-color: $progress-bar-color;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       background-color: inherit;
       top: 0;
@@ -725,12 +698,11 @@ th {
       bottom: 0;
       will-change: left, right;
       // Custom bezier
-      animation: indeterminate 2.1s cubic-bezier(0.650, 0.815, 0.735, 0.395) infinite;
-
+      animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       background-color: inherit;
       top: 0;
@@ -738,7 +710,7 @@ th {
       bottom: 0;
       will-change: left, right;
       // Custom bezier
-      animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite;
+      animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
       animation-delay: 1.15s;
     }
   }
@@ -778,7 +750,6 @@ th {
   }
 }
 
-
 /*******************
   Utility Classes
 *******************/
@@ -793,7 +764,7 @@ th {
 }
 
 .right-align {
-  text-align: right
+  text-align: right;
 }
 
 .center,

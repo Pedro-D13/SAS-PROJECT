@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://kit.fontawesome.com/9cd150c3b8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
     {% block title %} <title> Homepage </title> {% endblock %}
 
     {% endblock links %}
@@ -103,25 +103,26 @@
                             <h5 class="white-text" style="text-align: center;">Links</h5>
                             <p> Get into contact with us from the links about or the contact information below </p>
                         </div>
-                        <div class="fa-items" style="text-align: center;">
-                            <a href="#" class="fa fa-twitter" id="twitter"></a>
+                        <div class="fa fa-items" style="text-align: center;">
+                            <i class="fab fa-twitter"></i>
                             <a href="https://www.instagram.com/societyofsouthasia/?igshid=1v0mg6ipjgsfg"
-                                class="fa fa-instagram" id="insta" target="_blank"></a>
-                            <a href="#" class="fa fa-snapchat-ghost" id="snapchat"></a>
-                            <a href="#" class="fa fa-facebook" id="facebook"></a>
+                                target="_blank"><i class="fab fa-instagram"></i></a>
+                            <i class="fab fa-snapchat-ghost"></i>
+                            <i class="fab fa-facebook-square"></i>
                         </div>
                     </div>
                 </div>
                 <div class="footer-copyright">
                     <div class="container">
-                        © 2014 Copyright Text
-                        <a class="grey-text text-lighten-4 right" href="#!"> Brand Identity name </a>
+                        <h3 style="padding-right:40px;"> <a class="grey-text text-lighten-4 right" href="#!"> SOSA </a>
+                            </a>
+                        </h3>
+                        © 2019 Copyright Text
                     </div>
                 </div>
             </footer>
         </section>
         {% endblock sctn5 %}
-
     </main>
     <script defer src="{% static 'blog/css/materialize-src/js/mycustomjsfiles.js' %}">
     </script>
