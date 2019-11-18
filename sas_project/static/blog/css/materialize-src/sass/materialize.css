@@ -2662,10 +2662,10 @@ a {
 }
 
 .hoverable {
-  -webkit-transition: -webkit-box-shadow 0.25s;
-  transition: -webkit-box-shadow 0.25s;
-  transition: box-shadow 0.25s;
-  transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
 }
 
 .hoverable:hover {
@@ -2789,11 +2789,11 @@ video.responsive-video {
 }
 
 .breadcrumb:before {
-  content: "\E5CC";
+  content: '\E5CC';
   color: rgba(255, 255, 255, 0.7);
   vertical-align: top;
   display: inline-block;
-  font-family: "Material Icons";
+  font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
   font-size: 25px;
@@ -2990,8 +2990,8 @@ table.striped > tbody > tr > td {
 }
 
 table.highlight > tbody > tr {
-  -webkit-transition: background-color 0.25s ease;
-  transition: background-color 0.25s ease;
+  -webkit-transition: background-color .25s ease;
+  transition: background-color .25s ease;
 }
 
 table.highlight > tbody > tr:hover {
@@ -3026,7 +3026,7 @@ th {
     /* sort out borders */
   }
   table.responsive-table td:empty:before {
-    content: "\00a0";
+    content: '\00a0';
   }
   table.responsive-table th,
   table.responsive-table td {
@@ -3147,8 +3147,8 @@ th {
 
 .collection a.collection-item {
   display: block;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
+  -webkit-transition: .25s;
+  transition: .25s;
   color: #26a69a;
 }
 
@@ -3214,8 +3214,8 @@ th {
   left: 0;
   bottom: 0;
   background-color: #26a69a;
-  -webkit-transition: width 0.3s linear;
-  transition: width 0.3s linear;
+  -webkit-transition: width .3s linear;
+  transition: width .3s linear;
 }
 
 .progress .indeterminate {
@@ -3223,7 +3223,7 @@ th {
 }
 
 .progress .indeterminate:before {
-  content: "";
+  content: '';
   position: absolute;
   background-color: inherit;
   top: 0;
@@ -3235,7 +3235,7 @@ th {
 }
 
 .progress .indeterminate:after {
-  content: "";
+  content: '';
   position: absolute;
   background-color: inherit;
   top: 0;

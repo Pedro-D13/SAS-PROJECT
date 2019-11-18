@@ -184,6 +184,10 @@
   background-color: #806580;
 }
 
+img {
+  display: block;
+}
+
 .sctn3 {
   text-align: center;
   -webkit-box-sizing: border-box;
