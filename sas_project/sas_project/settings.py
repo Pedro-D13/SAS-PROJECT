@@ -17,8 +17,8 @@ with open('/etc/config.json') as config_file:
     config = json.load(config_file)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config['SECRET_KEY'] 
-#os.environ['SECRET_KEY']
+SECRET_KEY = config['SECRET_KEY']
+# os.environ['SECRET_KEY']
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -31,7 +31,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.sasproject.net','139.162.200.189','139.162.192.18', '192.168.0.109']
+ALLOWED_HOSTS = ['www.sasproject.net',
+                 '139.162.200.189', '139.162.192.18', '192.168.0.109']
 
 # Application definition
 
