@@ -31,7 +31,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['www.sasproject.net','139.162.200.189','139.162.192.18', '192.168.0.109']
+=======
+ALLOWED_HOSTS = ['139.162.192.18']
+>>>>>>> c17ceeb3fb98ce5792cd22d3a551be25ca05ba9a
 
 # Application definition
 
