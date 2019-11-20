@@ -13,12 +13,12 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import json
 
-with open('/etc/config.json') as config_file:
-    config = json.load(config_file)
+# with open('/etc/config.json') as config_file:
+#     config = json.load(config_file)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config['SECRET_KEY']
-# os.environ['SECRET_KEY']
+#SECRET_KEY = config['SECRET_KEY']
+SECRET_KEY = os.environ['SECRET_KEY']
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -29,9 +29,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.sasproject.net',
+ALLOWED_HOSTS = ['www.sasproject.net', 'localhost',
                  '139.162.200.189', '139.162.192.18', '192.168.0.109']
 
 # Application definition
@@ -147,8 +147,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = config.get('DB_USER')
-EMAIL_HOST_PASSWORD = config.get('DB_PASS')
+
+# EMAIL_HOST_USER = config.get('DB_USER')
+# EMAIL_HOST_PASSWORD = config.get('DB_PASS')
 
 
 SITE_ID = 13

@@ -1,7 +1,7 @@
 {% extends "blog2/base.html" %}
 
 {% load crispy_forms_tags %}
-{% block auth %}  {{ block.super }} {% endblock %}
+{% block auth %} {{ block.super }} {% endblock %}
 {% block sctn1 %}
 <div style="height:10vh"> </div>
 <div class="container" style="max-width:60vw;">
@@ -14,14 +14,13 @@
         </fieldset>
         <div class="form-group">
         </div>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit"> Create new post </button>
+        </div>
     </form>
-    <div class="form-group">
-	    <button class="btn btn-outline-info" type="submit"> Create new post </button>
-    </div>
+
 </div>
 
 <div style="height:10vh"> </div>
 
 {% endblock sctn1 %}
-
-

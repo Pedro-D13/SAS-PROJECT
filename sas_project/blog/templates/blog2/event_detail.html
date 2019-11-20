@@ -3,11 +3,18 @@
 {% load static %}
 
 {% block sctn1 %}
-<div class="container" style="max-width:80vw;">
-    <h1> {{event.title}} </h1>
-    <img style="background-image:url('static/blog/img/{{event.img}}')">
-    <p> {{event.desc}} </p>
-    <span> {{event.event_date}} </span>
+<div class="container">
+    <div>
+
+
+    </div>
 
 </div>
 {% endblock sctn1%}
+
+<div style="max-width:80vw;background-image:url('/static/blog/img/{{event.img}}')">
+
+</div>
+<h1> {{event.title}} </h1>
+<p> {{event.desc}} </p>
+<h2> {{event.event_date}} </h2>
