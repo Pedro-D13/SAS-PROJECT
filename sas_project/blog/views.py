@@ -19,7 +19,7 @@ from django.core.mail import send_mail
 
 class BaseTemplate(ListView):
     model = Post
-    template_name = "blog2/index.html"
+    template_name = "blog/index.html"
     context_object_name = "posts"
     ordering = ['-date_posted']
     paginate_by = 3
@@ -30,7 +30,7 @@ def homepageview(request, *args, **kwargs):
     events = Event.objects.all().order_by('-event_date')[:3]
     staff = User.objects.filter(is_staff=True)
     context = {'posts': posts, 'events': events, 'staff': staff}
-    return render(request, 'blog2/index.html', context)
+    return render(request, 'blog/base.html', context)
 
 
 class PostListView(ListView):

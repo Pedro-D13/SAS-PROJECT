@@ -12,14 +12,37 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import json
+import sys
 
-# with open('/etc/config.json') as config_file:
-#     config = json.load(config_file)
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = config['SECRET_KEY']
-SECRET_KEY = os.environ['SECRET_KEY']
+production = False
 
+
+def testing_or_production():
+    # Checks to see if the application is running on mac or linx, depending on the OS, it will be in debug or not
+    try:
+        if sys.platform == 'darwin':
+            print("running on mac, not in production")
+            return os.environ['SECRET_KEY']
+        elif sys.platform == 'linux' or sys.platform == 'linux2':
+            print('running on linux, in production')
+            production = True
+            return config['SECRET_KEY']
+        else:
+            raise OSError
+    except OSError:
+        print("Not a suitable envrionment to run the project")
+
+
+if production:
+    with open('/etc/config.json') as config_file:
+        config = json.load(config_file)
+
+
+SECRET_KEY = testing_or_production()
+
+#SECRET_KEY = config['SECRET_KEY']
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,7 +52,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if production:
+    DEBUG = False
+else:
+    DEBUG = True
+
 
 ALLOWED_HOSTS = ['www.sasproject.net', 'localhost',
                  '139.162.200.189', '139.162.192.18', '192.168.0.109']
@@ -40,6 +67,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'bulma',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -148,8 +176,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-# EMAIL_HOST_USER = config.get('DB_USER')
-# EMAIL_HOST_PASSWORD = config.get('DB_PASS')
-
+if production:
+    EMAIL_HOST_USER = config.get('DB_USER')
+    EMAIL_HOST_PASSWORD = config.get('DB_PASS')
 
 SITE_ID = 13
