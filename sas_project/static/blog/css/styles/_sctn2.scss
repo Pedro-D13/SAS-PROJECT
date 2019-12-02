@@ -1,0 +1,18 @@
+@import "./sctn1", "./mixins";
+
+$sctn2color: #79797339;
+
+.sctn2 {
+  .SectionHeading {
+    @include border-shadow();
+  }
+
+  .flex-container {
+    border: none;
+    padding: 44px 0px;
+  }
+
+  .col {
+    @include border-shadow();
+  }
+}

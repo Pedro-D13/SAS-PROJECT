@@ -1,0 +1,31 @@
+ @import "./mixins";
+
+ //  $sct1color:#013140;
+ //  $colour:linear-gradient(to right, #013140, #a0045d);
+
+ .sctn1 {
+   color: white;
+
+
+   .flex-container {
+     @include flex-container();
+     @include border-shadow();
+
+     .flex-item {
+       @include flex-item();
+
+     }
+
+     p,
+     h3 {
+       display: flex;
+       align-items: center;
+       justify-content: space-around;
+       line-height: 1.5;
+     }
+
+     .col {
+       @include border-shadow();
+     }
+   }
+ }

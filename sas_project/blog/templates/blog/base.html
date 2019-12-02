@@ -1,54 +1,50 @@
 {% load static %}
-{% load bulma_tags %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-navbar-fixed-top">
+
 
 <head>
     {% block links %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="{% static 'bulma/css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'bulma/css/mystyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/bulma/mystyles.css' %}">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-
-    {% block title %} <title>Hello Bulma!</title> {% endblock %}
+    {% block title %} <title> Homepage </title> {% endblock %}
 
     {% endblock links %}
 </head>
+{% block body %}
 
 <body class="container">
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+
+    {% block nav%}
+
+    <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="{% url 'blog:homepage' %}">
-
+                <img class="image is-68x68" style="max-height:68px; " src="{% static 'blog/img/lotus.jpeg' %}">
             </a>
-
-            <a role=" button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
                 data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item">
                     Home
                 </a>
-
                 <a class="navbar-item">
                     Blogs
                 </a>
-
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         Events
                     </a>
-
                     <div class="navbar-dropdown">
                         <a class="navbar-item">
                             Upcoming Events
@@ -56,12 +52,15 @@
                         <a class="navbar-item">
                             Past Events
                         </a>
-                        <hr class="navbar-divider">
-
                     </div>
                 </div>
+                <a class="navbar-item">
+                    About
+                </a>
+                <a class="navbar-item">
+                    Contact us
+                </a>
             </div>
-
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons ">
@@ -72,7 +71,7 @@
                             </strong>
                         </a>
                         {% else %}
-                        <a class="button is-primary" href="{% url 'register' %}">
+                        <a class="button is-outlined" href="{% url 'register' %}">
                             <strong>
                                 Sign up
                             </strong>
@@ -85,7 +84,7 @@
                         </a>
 
                         {% else %}
-                        <a class="button is-light" href="{% url 'login' %}">
+                        <a class="button is-outlined" href="{% url 'login' %}">
                             Login
                         </a>
                         {% endif %}
@@ -93,53 +92,238 @@
                 </div>
             </div>
         </div>
-
     </nav>
-    <div class="navbar-menu" id="navMenu">
-        <!-- navbar-start, navbar-end... -->
-    </div>
+    {% endblock nav %}
 
 
-    <h1 class="title">
-        South Asian Soceity
-    </h1>
+    {% block sctn1 %}
+    <!-- Hero Section,  -->
+    <section class="hero bold">
+        <div class="level">
+            <div class="level-right">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            Welcome SAS
+                        </h1>
+                        <h2 class="subtitle">
+                            Home to the South Asian Soceity
+                        </h2>
+                        <h2 class="subtitle">
+                            add more content that you would like people to when they first get to the site
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <figure class="image is-128x128">
+                <img src="{% static 'blog/img/lotus.jpeg' %}" alt="" class="is-rounded">
+            </figure>
+        </div>
+    </section>
+    <!-- ./End of hero section -->
+    {% endblock sctn1 %}
 
-    <p class="subtitle">
-        Home to the South Asian Soceity <a
-            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">
-            Link to something </a>
-    </p>
-    <section class="hero is-fullheight">
+
+    {% block sctn2 %}
+    <!-- Upcoming Events  -->
+    <!-- see the next upcoming event this should be a banner -->
+    <section class="hero is-medium is-primary">
         <div class="hero-body">
             <div class="container">
-                <figure class="image">
-                    <img src="{% static 'blog/img/lotus.jpeg' %}">
-                </figure>
+                <h1 class="title">
+                    Next big upcoming event
+                </h1>
+                <h2 class="subtitle">
+                    Come to our exciting event
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="columns">
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image ">
+                            <img src="{% static 'blog/img/lotus.jpeg' %}" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <!-- this should be an image of the person who created the event  -->
+                                    <img class="is-rounded" src="{% static 'blog/img/lotus.jpeg' %}" alt="">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4"> @ location of the event </p>
+                                <p class="title is-4"> Date of the event </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            this should be a brief description of the event and what it'll be abloe <a>link to get
+                                tickets </a>
+                            <a href="#">More info</a>
+                            <br>
+                            <time datetime="2016-1-1">Date of the event/ 20-01-2029 </time>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="columns">
+                                <div class="column">
+                                    <p class="title">
+                                        take me out
+                                    </p>
+                                    <p class="content">
+                                        short description of the event
+                                    </p>
+                                    <p class="subtitle">
+                                        Jeff Atwood
+                                    </p>
+                                </div>
+                                <div class="column">
+                                    <img src="{% static 'blog/img/lotus.jpeg' %}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    View on <a
+                                        href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    Share on <a href="#">Facebook</a>
+                                </span>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="columns">
+                                <div class="column">
+                                    <p class="title">
+                                        take me out
+                                    </p>
+                                    <p class="content">
+                                        short description of the event
+                                    </p>
+                                    <p class="subtitle">
+                                        Jeff Atwood
+                                    </p>
+                                </div>
+                                <div class="column">
+                                    <img src="{% static 'blog/img/lotus.jpeg' %}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    View on <a
+                                        href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    Share on <a href="#">Facebook</a>
+                                </span>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- see the last two past events this should be two columns -->
+    </section>
+    {% endblock sctn2 %}
+
+    {% block sctn3 %}
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Check out out blog Posts Below
+                </h1>
+                <h2 class="subtitle">
+                    from some of our members and there thoughts about the Soceity
+                </h2>
             </div>
         </div>
     </section>
 
-    <div class="field">
-        <div class="control">
-            <input class="input" type="text" placeholder="Input">
+    <section class="section">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child notification is-primary">
+                            <p class="title">Vertical...</p>
+                            <p class="subtitle">Top tile</p>
+                        </article>
+                        <article class="tile is-child notification is-warning">
+                            <p class="title">...tiles</p>
+                            <p class="subtitle">Bottom tile</p>
+                        </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-info">
+                            <p class="title">Middle tile</p>
+                            <p class="subtitle">With an image</p>
+                            <figure class="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/640x480.png">
+                            </figure>
+                        </article>
+                    </div>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-danger">
+                        <p class="title">Wide tile</p>
+                        <p class="subtitle">Aligned with the right tile</p>
+                        <div class="content">
+                            <!-- Content -->
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-success">
+                    <div class="content">
+                        <p class="title">Tall tile</p>
+                        <p class="subtitle">With even more content</p>
+                        <div class="content">
+                            <!-- Content -->
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
-    </div>
-
-    <div class="field">
-        <p class="control">
-            <span class="select">
-                <select>
-                    <option>Select dropdown</option>
-                </select>
-            </span>
-        </p>
-    </div>
-
-    <div class="buttons">
-        <a class="button is-primary">Primary</a>
-        <a class="button is-link">Link</a>
-    </div>
     </section>
+    {% endblock sctn3 %}
+
+
+    {% block footer %}
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+        </div>
+    </footer>
+    {% endblock footer %}
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -169,5 +353,6 @@
         });
     </script>
 </body>
+{% endblock body%}
 
 </html>
