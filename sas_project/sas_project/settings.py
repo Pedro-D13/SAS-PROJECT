@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import json
 import sys
+from setuptools.command.setopt import config_file
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -28,16 +29,13 @@ def testing_or_production():
         elif sys.platform == 'linux' or sys.platform == 'linux2':
             print('running on linux, in production')
             production = True
+            with open('/etc/config.json') as config_file:
+                config = json.load(config_file)
             return config['SECRET_KEY']
         else:
             raise OSError
     except OSError:
         print("Not a suitable envrionment to run the project")
-
-
-if production:
-    with open('/etc/config.json') as config_file:
-        config = json.load(config_file)
 
 
 SECRET_KEY = testing_or_production()
