@@ -1,5 +1,7 @@
 import os
 import json
+from datetime import datetime as dt
+
 from blog.forms import ContactForm
 from django.views.generic.edit import FormView
 from django.views import View
@@ -26,10 +28,13 @@ class BaseTemplate(ListView):
 
 
 def homepageview(request, *args, **kwargs):
-    posts = Post.objects.all().order_by('-date_posted')[:3]
-    events = Event.objects.all().order_by('-event_date')[:3]
+    posts = Post.objects.all().order_by(
+        '-date_posted')[:4]
+    upcoming_events = Event.objects.filter(event_date__gte=dt.now())
+    past_events = Event.objects.filter(event_date__lte=dt.now())
     staff = User.objects.filter(is_staff=True)
-    context = {'posts': posts, 'events': events, 'staff': staff}
+    context = {'posts': posts, 'up_events': upcoming_events,
+               'past_events': past_events, 'staff': staff}
     return render(request, 'blog/base.html', context)
 
 
@@ -105,6 +110,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class EventListView(ListView):
+    queryset = Event.objects.filter(event_date__gte=dt.now())
     model = Event
     template_name = "blog2/event.html"
     context_object_name = "events"
@@ -114,6 +120,7 @@ class EventDetailView(DetailView):
     model = Event
     template_name = "blog2/event_detail.html"
     context_object_name = "event"
+
 
 # class EventCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 #     pass

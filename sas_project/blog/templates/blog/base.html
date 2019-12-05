@@ -127,25 +127,33 @@
     {% block sctn2 %}
     <!-- Upcoming Events  -->
     <!-- see the next upcoming event this should be a banner -->
-    <section class="hero is-medium is-primary">
+    <section class="hero is-small is-primary">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">
-                    Next big upcoming event
+                <h1 class="title is-1">
+                    Our next big upcoming event
+                    {% for event in up_events %}
+                    <strong> {{event.title | upper }} </strong>
+                    <figure class="image is-2by1 ">
+                        <img src="{{ event.img.url }}">
+                    </figure>
+
                 </h1>
-                <h2 class="subtitle">
-                    Come to our exciting event
+                <h2 class="subtitle is-3 is-spaced ">
+                    {{event.desc}}
                 </h2>
+                {% endfor %}
             </div>
         </div>
     </section>
     <section class="section">
         <div class="columns">
+            {% for event in past_events %}
             <div class="column">
                 <div class="card">
                     <div class="card-image">
                         <figure class="image ">
-                            <img src="{% static 'blog/img/lotus.jpeg' %}" alt="Placeholder image">
+                            <img src="{{ event.img.url }}" alt="Placeholder image">
                         </figure>
                     </div>
                     <div class="card-content">
@@ -153,97 +161,23 @@
                             <div class="media-left">
                                 <figure class="image is-48x48">
                                     <!-- this should be an image of the person who created the event  -->
-                                    <img class="is-rounded" src="{% static 'blog/img/lotus.jpeg' %}" alt="">
+                                    <img class="is-rounded" src="{{ event.img.url }}" alt="">
                                 </figure>
                             </div>
                             <div class="media-content">
-                                <p class="title is-4"> @ location of the event </p>
-                                <p class="title is-4"> Date of the event </p>
+                                <strong> {{event.title}} </strong>
                             </div>
                         </div>
                         <div class="content">
-                            this should be a brief description of the event and what it'll be abloe <a>link to get
-                                tickets </a>
-                            <a href="#">More info</a>
+                            {{event.desc}}
+                            </a>
+                            <a href="{% url 'blog:event_detail' event.id %}"> More info </a>
                             <br>
-                            <time datetime="2016-1-1">Date of the event/ 20-01-2029 </time>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="column">
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="columns">
-                                <div class="column">
-                                    <p class="title">
-                                        take me out
-                                    </p>
-                                    <p class="content">
-                                        short description of the event
-                                    </p>
-                                    <p class="subtitle">
-                                        Jeff Atwood
-                                    </p>
-                                </div>
-                                <div class="column">
-                                    <img src="{% static 'blog/img/lotus.jpeg' %}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <footer class="card-footer">
-                            <p class="card-footer-item">
-                                <span>
-                                    View on <a
-                                        href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-                                </span>
-                            </p>
-                            <p class="card-footer-item">
-                                <span>
-                                    Share on <a href="#">Facebook</a>
-                                </span>
-                            </p>
-                        </footer>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="columns">
-                                <div class="column">
-                                    <p class="title">
-                                        take me out
-                                    </p>
-                                    <p class="content">
-                                        short description of the event
-                                    </p>
-                                    <p class="subtitle">
-                                        Jeff Atwood
-                                    </p>
-                                </div>
-                                <div class="column">
-                                    <img src="{% static 'blog/img/lotus.jpeg' %}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <footer class="card-footer">
-                            <p class="card-footer-item">
-                                <span>
-                                    View on <a
-                                        href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-                                </span>
-                            </p>
-                            <p class="card-footer-item">
-                                <span>
-                                    Share on <a href="#">Facebook</a>
-                                </span>
-                            </p>
-                        </footer>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <!-- see the last two past events this should be two columns -->
     </section>
@@ -254,10 +188,10 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Check out out blog Posts Below
+                    Check out our blog Posts Below
                 </h1>
                 <h2 class="subtitle">
-                    from some of our members and there thoughts about the Soceity
+                    from some of our members and their thoughts about the Soceity
                 </h2>
             </div>
         </div>
@@ -265,51 +199,32 @@
 
     <section class="section">
         <div class="tile is-ancestor">
-            <div class="tile is-vertical is-8">
-                <div class="tile">
-                    <div class="tile is-parent is-vertical">
-                        <article class="tile is-child notification is-primary">
-                            <p class="title">Vertical...</p>
-                            <p class="subtitle">Top tile</p>
-                        </article>
-                        <article class="tile is-child notification is-warning">
-                            <p class="title">...tiles</p>
-                            <p class="subtitle">Bottom tile</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child notification is-info">
-                            <p class="title">Middle tile</p>
-                            <p class="subtitle">With an image</p>
-                            <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/640x480.png">
-                            </figure>
-                        </article>
-                    </div>
-                </div>
-                <div class="tile is-parent">
-                    <article class="tile is-child notification is-danger">
-                        <p class="title">Wide tile</p>
-                        <p class="subtitle">Aligned with the right tile</p>
-                        <div class="content">
-                            <!-- Content -->
-                        </div>
-                    </article>
+            <div class="tile is-4  is-parent">
+                <div class="tile is-child box">
+                    {% for post in posts %}
+                    {% if forloop.counter0 == 0 %}
+                    <h1 class="title"> {{ post.title }}
+                        <p class="subtitle"> {{ post.content }}</p>
+                        <a href="{% url 'blog:post_detail' post.id%}" class="is-link"> Click me to read more !!! </a>
+                    </h1>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
-            <div class="tile is-parent">
-                <article class="tile is-child notification is-success">
-                    <div class="content">
-                        <p class="title">Tall tile</p>
-                        <p class="subtitle">With even more content</p>
-                        <div class="content">
-                            <!-- Content -->
-                        </div>
-                    </div>
-                </article>
+            <div class="tile is-vertical is-parent">
+
+                {% for post in posts %}
+                {% if forloop.counter0 > 0 %}
+                <div class="tile is-child box">
+                    <p class="title">{{ post.title}} <a href="{% url 'blog:post_detail' post.id %}" class=" is-link">
+                            read more </a> </p>
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </section>
+
     {% endblock sctn3 %}
 
 
@@ -317,10 +232,26 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                <strong>SAS</strong> by <a href="https://jgthms.com">Pedro Dias</a>.
             </p>
+        </div>
+        <div class="content has-text-centered">
+            <p> Get into contact with us from the links about or the contact information below </p>
+        </div>
+        <div class="content has-text-centered">
+            <span class="icon">
+                <i class="fab fa-twitter"></i>
+            </span>
+            <span class="icon">
+                <a href="https://www.instagram.com/societyofsouthasia/?igshid=1v0mg6ipjgsfg" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+            </span>
+            <span class="icon">
+                <i class="fab fa-snapchat-ghost"></i>
+            </span>
+            <span class="icon">
+                <i class="fab fa-facebook-square"></i>
+            </span>
         </div>
     </footer>
     {% endblock footer %}
