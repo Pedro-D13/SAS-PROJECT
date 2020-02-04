@@ -1,6 +1,0 @@
-#ignore .DS_STORE
-.DS_Store
-posts.json
-.vscode
-../.vscode/settings.json
-../env/
